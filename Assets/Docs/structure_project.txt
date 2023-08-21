@@ -1,0 +1,51 @@
+Assets/                    # Основная папка для всех ресурсов
+│
+├── Scenes/                 # Сцены игры
+│   ├── MainMenu.unity      # Основное меню
+│   ├── Level1.unity        # Первый игровой уровень
+│   └── Level2.unity        # Второй игровой уровень
+│
+├── Scripts/                # Скрипты
+│   ├── Player/             # Скрипты, связанные с игроком
+│   │   ├── PlayerMovement.cs
+│   │   └── PlayerHealth.cs
+│   ├── Enemy/              # Скрипты для врагов
+│   │   ├── EnemyAI.cs
+│   │   └── EnemyHealth.cs
+│   ├── UI/                 # Скрипты для управления интерфейсом
+│   │   ├── UIManager.cs
+│   │   └── ScoreManager.cs
+│   ├── GameManager.cs      # Основной скрипт управления игрой
+│   └── AudioManager.cs     # Управление звуками и музыкой
+│
+├── Materials/              # Материалы для объектов
+│   ├── PlayerMaterial.mat
+│   └── EnemyMaterial.mat
+│
+├── Textures/               # Текстуры
+│   ├── Background.png
+│   └── Character.png
+│
+├── Models/                 # 3D-модели
+│   ├── PlayerModel.fbx
+│   └── EnemyModel.fbx
+│
+├── Prefabs/                # Готовые объекты (префабы)
+│   ├── PlayerPrefab.prefab
+│   └── EnemyPrefab.prefab
+│
+├── Animations/             # Анимации
+│   ├── PlayerIdle.anim
+│   └── EnemyWalk.anim
+│
+├── Audio/                  # Звуковые файлы
+│   ├── Soundtrack.mp3
+│   └── Explosion.wav
+│
+├── UI/                     # Графические элементы интерфейса
+│   ├── MainMenuCanvas.prefab
+│   └── HUDCanvas.prefab
+│
+└── Documentation/          # Документация и ресурсы
+    ├── GameDesignDoc.pdf   # Документ с описанием игры
+    └── Tutorials/          # Ресурсы для обучения разработчиков
