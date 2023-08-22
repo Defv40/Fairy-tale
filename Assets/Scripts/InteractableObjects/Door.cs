@@ -16,18 +16,14 @@ public class Door : InteractableObject
         if (item != null)
         {
             _playerInventory.PlayerInventory.Remove(item);
-            print("Я удали ключ");
+            NotificationCenter.Intastance.NotifyObserver(EventType.OnRemoveItemFromInventory);
+            GameObject.Destroy(gameObject);
         }
         else
         {
             print("Нет Ключа");
         }
-        //if (_playerInventory.PlayerInventory.Exists((item) => item is Key))
-        //{
-        //    _playerInventory.PlayerInventory.Remove(
-
-        //    );
-        //}
+        
 
 
     }

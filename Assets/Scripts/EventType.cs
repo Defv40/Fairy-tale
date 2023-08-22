@@ -5,4 +5,5 @@
     OnInteractObjectExit, // вышел из зоны взаимодействия
     OnInteractObjectStay, // Пока стоишь в зоне взаимодействия
     OnPickItem, // подбор предмета в инвентарь
+    OnRemoveItemFromInventory, // при использовании либо при выбрасывании
 }

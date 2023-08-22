@@ -64,21 +64,33 @@ public class UI_Inventory : MonoBehaviour, IObserver
         Debug.Log(transform.childCount);
     }
 
+    private void FillUiInventory()
+    {
+        ClearChildren();
+
+        foreach (Item item in _inventory.PlayerInventory)
+        {
+            Sprite icon = _itemIcons[item.GetType().ToString()];
+
+            _itemPrefab.GetComponent<Image>().sprite = icon;
+
+            Instantiate(_itemPrefab.gameObject, transform);
+        }
+    }
+
     public void OnNotify(EventType type)
     {
         if (type == EventType.OnPickItem)
         {
-            ClearChildren();
 
-            foreach (Item item in _inventory.PlayerInventory)
-            {
-                Sprite icon = _itemIcons[item.GetType().ToString()];
+            FillUiInventory();
+            return;
+        }
 
-                _itemPrefab.GetComponent<Image>().sprite = icon;
-
-                Instantiate(_itemPrefab.gameObject, transform);
-            }
-           
+        if (type == EventType.OnRemoveItemFromInventory)
+        {
+            FillUiInventory();
+            return;
         }
     }
 }
