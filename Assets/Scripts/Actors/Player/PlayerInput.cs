@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private PlayerControls _playerControls;
-    private Vector2 _movementInput;
+    [SerializeField] private Vector2 _movementInput;
     public Vector2 MovementInput
     {
         get { return _movementInput; }
