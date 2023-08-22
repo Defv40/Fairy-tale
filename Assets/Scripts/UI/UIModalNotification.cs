@@ -21,8 +21,5 @@ public class UIModalNotification : UIModal
                 break;
 
         }
-
-        
-        //gameObject.SetActive(true);
     }
 }

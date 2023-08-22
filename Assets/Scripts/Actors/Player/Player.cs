@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngineInternal;
@@ -30,7 +31,7 @@ public class Player : Actor, IMovable, IObserver
 
     public void OnNotify(EventType type)
     {
-        Debug.Log("Игрок отозвался!");
+        if (type == EventType.OnInteract) TryInteract();
     }
 
     private void Awake()
@@ -68,13 +69,12 @@ public class Player : Actor, IMovable, IObserver
 
     private void Update()
     {
-        _isInteracting = false;
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            _isInteracting = true;
-        }
+    }
 
-        if (!_isInteracting) return;
+    public void TryInteract()
+    {
+      
+        _isInteracting = true;
 
         Ray ray = new Ray(_body.transform.position, _body.transform.forward);
         RaycastHit hit;
@@ -86,8 +86,9 @@ public class Player : Actor, IMovable, IObserver
                 interactable.Interact();
             }
         }
-    }
 
+        _isInteracting = false;
+    }
     public void FixedUpdate()
     {
         Move();

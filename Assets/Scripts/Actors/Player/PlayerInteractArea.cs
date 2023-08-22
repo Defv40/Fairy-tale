@@ -6,13 +6,7 @@ using UnityEngine;
 public class PlayerInteractArea : MonoBehaviour
 {
 
-
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-
-    //    NotificationCenter.Intastance.NotifyObserver(EventType.OnInteractObjectEnter);
-    //}
+  
     private void OnTriggerExit(Collider other)
     {
 

@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
         _playerControls = new PlayerControls();
         _playerControls.Enable();
 
-       // _playerControls.PlayerMovement.Movement.performed += ctx => ;
+        _playerControls.PlayerInteract.Interact.started += ctx => NotificationCenter.Intastance.NotifyObserver(EventType.OnInteract);
     }
 
     private void Update()
