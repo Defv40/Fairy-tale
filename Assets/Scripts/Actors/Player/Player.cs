@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngineInternal;
 
-public class Player : Actor, IMovable
+public class Player : Actor, IMovable, IObserver
 {
     
     private Rigidbody _rb;
@@ -17,6 +17,22 @@ public class Player : Actor, IMovable
     [SerializeField] private Transform _body; // тело которое крутим, иначе ломается камера
     [SerializeField][Range(0, 15)] private float maxDistanceForInteract;
     [SerializeField] private bool _isInteracting;
+
+    private void OnEnable()
+    {
+        NotificationCenter.Intastance.AddObserver(this);
+    }
+
+    private void OnDisable()
+    {
+        NotificationCenter.Intastance.RemoveObserver(this);
+    }
+
+    public void OnNotify(EventType type)
+    {
+        Debug.Log("Игрок отозвался!");
+    }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
