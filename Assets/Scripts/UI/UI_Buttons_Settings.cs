@@ -49,4 +49,9 @@ public class UI_Buttons_Settings : MonoBehaviour
         DisableAllAdditionalWindows();
         o_controls.SetActive(true);
     }
+
+    public void Save_OnClick() 
+    {
+        Global_Settings.Init.Save();
+    }
 }
