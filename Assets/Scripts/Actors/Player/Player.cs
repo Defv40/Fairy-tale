@@ -9,7 +9,7 @@ public class Player : Actor, IMovable, IObserver
     private PlayerInput _input;
 
     private Vector3 _moveDirection;
-
+    [SerializeField] private Animator _animator;
     [SerializeField]private Transform _cameraTarget;
     [SerializeField][Range(0, 50)] private float _playerRotationSpeed; // Скорость поворота в направление движения
     [SerializeField] private Transform _body; // тело которое крутим, иначе ломается камера
@@ -35,6 +35,7 @@ public class Player : Actor, IMovable, IObserver
     {
         _rb = GetComponent<Rigidbody>();
         _input = GetComponent<PlayerInput>();
+       
     }
 
     public void Move()
@@ -44,7 +45,19 @@ public class Player : Actor, IMovable, IObserver
         _moveDirection = _moveDirection * Speed;
         _moveDirection.y = _rb.velocity.y;
         _rb.velocity = _moveDirection;
-        
+
+        print(_rb.velocity.magnitude);
+
+
+       //Fix this method вынеси долбаеб
+        if (_rb.velocity.magnitude > 0.5)
+        {
+            _animator.SetBool(Animator.StringToHash("isRunnnig"), true);
+        }
+        else
+        {
+            _animator.SetBool(Animator.StringToHash("isRunnnig"), false);
+        }
     }
 
     public void Rotate()
