@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal.Profiling.Memory.Experimental;
+
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngineInternal;
+
 
 public class Player : Actor, IMovable, IObserver
 {

@@ -3,7 +3,12 @@ using UnityEngine;
 
 public class Item : InteractableObject
 {
-    [SerializeField] private Inventory _invetory;
+    [SerializeField] protected Inventory _invetory;
+
+    private void Awake()
+    {
+        _invetory = GameObject.FindFirstObjectByType<Inventory>();
+    }
     public override void Interact()
     {
         _invetory.AddItem(this);

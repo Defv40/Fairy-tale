@@ -5,6 +5,11 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField][Range(0, 10)] private int _inventoryCapacity;
     [SerializeField] private List<Item> _inventory;
+    public List<Item> PlayerInventory
+    {
+        get { return _inventory; }
+        private set { _inventory = value; }
+    }
 
     private PlayerControls _playerControls;
     private Player _player;
