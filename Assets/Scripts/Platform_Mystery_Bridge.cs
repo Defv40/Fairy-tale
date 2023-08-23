@@ -33,35 +33,37 @@ public class Platform_Mystery_Bridge : MonoBehaviour
         else m_meshRenderer.material = m_notAvailable;
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag.Equals("Player"))
+        if (other.GetComponent<Collider>().tag.Equals("Player"))
         {
             m_text.text = Random.Range(0, 6).ToString();
 
             if (id <= int.Parse(m_text.text))
             {
                 lastPlatform = this;
-                if(!isLocked) ChangeAvailable(true);
+                if (!isLocked) ChangeAvailable(true);
             }
-            else if(!isAvailable)
+            else if (!isAvailable)
             {
                 Player.Instance.SetMove = false;
 
                 Blackout.Inst.Pass(true, _event: () =>
                 {
-                    
+
                     Player.Instance.SetMove = true;
-                   
-                    collision.transform.position = new Vector3(startPos.position.x, collision.transform.position.y, startPos.position.z);
+
+                    other.transform.position = new Vector3(startPos.position.x, other.transform.position.y, startPos.position.z);
                     Blackout.Inst.Pass(false);
-                   
+
                 });
 
-                
+
                 //collision.transform.position = new Vector3(lastPlatform.transform.position.x, collision.transform.position.y, lastPlatform.transform.position.z);
             }
         }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //}
 }
