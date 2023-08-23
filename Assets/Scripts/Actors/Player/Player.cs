@@ -1,7 +1,7 @@
 
-using UnityEditor.ShaderGraph;
+
 using UnityEngine;
-using UnityEngine.Windows;
+
 
 
 public class Player : Actor, IMovable, IObserver
@@ -20,7 +20,7 @@ public class Player : Actor, IMovable, IObserver
     [SerializeField] private Transform _body; // тело которое крутим, иначе ломается камера
     [SerializeField][Range(0, 15)] private float maxDistanceForInteract;
     [SerializeField] private Transform _interactRayObject; // объект из которого будет пускаться луч для взаимодействия
-    [SerializeField] private bool _isInteracting;
+    
     private bool _canJump;
     private Ray _interactRay;
     public bool SetMove
@@ -124,7 +124,7 @@ public class Player : Actor, IMovable, IObserver
     public void TryInteract()
     {
       
-        _isInteracting = true;
+       
 
         _interactRay = new Ray(_interactRayObject.position, _interactRayObject.forward);
         RaycastHit hit;
@@ -137,7 +137,7 @@ public class Player : Actor, IMovable, IObserver
             }
         }
 
-        _isInteracting = false;
+       
     }
 
 

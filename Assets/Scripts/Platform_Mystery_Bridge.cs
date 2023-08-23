@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
 
@@ -40,8 +39,7 @@ public class Platform_Mystery_Bridge : MonoBehaviour
         if (other.GetComponent<Collider>().tag.Equals("Player"))
         {
             int lastNum = int.Parse(m_text.text);
-            int num = RandomNumDontRepeat(lastNum);
-            Debug.LogWarning(num);
+            int num = RandomNumDontRepeat(lastNum); 
 
             if (id <= lastNum)
             {
@@ -62,8 +60,6 @@ public class Platform_Mystery_Bridge : MonoBehaviour
 
                 });
 
-
-                //collision.transform.position = new Vector3(lastPlatform.transform.position.x, collision.transform.position.y, lastPlatform.transform.position.z);
             }
             else m_text.text = num.ToString();
         }
@@ -79,7 +75,5 @@ public class Platform_Mystery_Bridge : MonoBehaviour
         } while (n == lastNum);
         return n;
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //}
+    
 }
