@@ -1,5 +1,7 @@
 
+using UnityEditor.ShaderGraph;
 using UnityEngine;
+using UnityEngine.Windows;
 
 
 public class Player : Actor, IMovable, IObserver
@@ -9,13 +11,16 @@ public class Player : Actor, IMovable, IObserver
     private Rigidbody _rb;
     private PlayerInput _input;
     public static Player Instance { get; private set; }
+    private PlayerControls _controls;
     private Vector3 _moveDirection;
     [SerializeField] private Animator _animator;
     [SerializeField]private Transform _cameraTarget;
     [SerializeField][Range(0, 50)] private float _playerRotationSpeed; // Скорость поворота в направление движения
+    [SerializeField][Range(0, 15)] private float _jumpForce;
     [SerializeField] private Transform _body; // тело которое крутим, иначе ломается камера
     [SerializeField][Range(0, 15)] private float maxDistanceForInteract;
     [SerializeField] private bool _isInteracting;
+    private bool _canJump;
     public bool SetMove
     {
         set
@@ -32,11 +37,19 @@ public class Player : Actor, IMovable, IObserver
     }
     private void OnEnable()
     {
+        _controls = new PlayerControls();
+        _controls.Enable();
+        _controls.PlayerMovement.Jump.started += ctx => Jump();
+
         NotificationCenter.Intastance.AddObserver(this);
     }
 
     private void OnDisable()
     {
+       
+        _controls.Disable();
+        _controls = null;
+
         NotificationCenter.Intastance.RemoveObserver(this);
     }
 
@@ -68,9 +81,10 @@ public class Player : Actor, IMovable, IObserver
 
 
         PlayAnimation();
-
-
     }
+
+
+
     private void PlayAnimation()
     {
         if (_rb.velocity.magnitude > 0.5)
@@ -125,6 +139,22 @@ public class Player : Actor, IMovable, IObserver
     {
         Move();
         Rotate();
+    }
+
+    public void Jump()
+    {
+        if (!_canJump) return;
+        _rb.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
+        _canJump = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            _canJump = true;
+        }
     }
 }
 
