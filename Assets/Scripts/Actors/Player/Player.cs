@@ -5,9 +5,10 @@ using UnityEngine;
 public class Player : Actor, IMovable, IObserver
 {
     
+
     private Rigidbody _rb;
     private PlayerInput _input;
-
+    public static Player Instance { get; private set; }
     private Vector3 _moveDirection;
     [SerializeField] private Animator _animator;
     [SerializeField]private Transform _cameraTarget;
@@ -15,7 +16,20 @@ public class Player : Actor, IMovable, IObserver
     [SerializeField] private Transform _body; // тело которое крутим, иначе ломается камера
     [SerializeField][Range(0, 15)] private float maxDistanceForInteract;
     [SerializeField] private bool _isInteracting;
-
+    public bool SetMove
+    {
+        set
+        {
+            if (value)
+            {
+                _input.EnableMove();
+            }
+            else
+            {
+                _input.DisableMove();
+            }
+        }
+    }
     private void OnEnable()
     {
         NotificationCenter.Intastance.AddObserver(this);
@@ -26,6 +40,7 @@ public class Player : Actor, IMovable, IObserver
         NotificationCenter.Intastance.RemoveObserver(this);
     }
 
+
     public void OnNotify(EventType type)
     {
         if (type == EventType.OnInteract) TryInteract();
@@ -33,6 +48,10 @@ public class Player : Actor, IMovable, IObserver
 
     private void Awake()
     {
+        if (Instance != null) Debug.LogError("Больше одного гг на сцене");
+        
+        Instance = this;
+
         _rb = GetComponent<Rigidbody>();
         _input = GetComponent<PlayerInput>();
        
@@ -46,10 +65,14 @@ public class Player : Actor, IMovable, IObserver
         _moveDirection.y = _rb.velocity.y;
         _rb.velocity = _moveDirection;
 
-        print(_rb.velocity.magnitude);
 
 
-       //Fix this method вынеси долбаеб
+        PlayAnimation();
+
+
+    }
+    private void PlayAnimation()
+    {
         if (_rb.velocity.magnitude > 0.5)
         {
             _animator.SetBool(Animator.StringToHash("isRunnnig"), true);
@@ -59,7 +82,6 @@ public class Player : Actor, IMovable, IObserver
             _animator.SetBool(Animator.StringToHash("isRunnnig"), false);
         }
     }
-
     public void Rotate()
     {
         Vector3 targetDirection = Vector3.zero;

@@ -29,4 +29,13 @@ public class PlayerInput : MonoBehaviour
         _playerControls.Disable();
         _playerControls = null;
     }
+
+    public void EnableMove()
+    {
+        _playerControls.Enable();
+    }
+    public void DisableMove()
+    {
+        _playerControls.Disable();
+    }
 }
