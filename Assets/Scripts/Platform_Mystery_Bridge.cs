@@ -47,7 +47,12 @@ public class Platform_Mystery_Bridge : MonoBehaviour
             }
             else if(!isAvailable)
             {
-                collision.transform.position = new Vector3(startPos.position.x, collision.transform.position.y, startPos.position.z);
+                Blackout.Inst.Pass(true, _event: () =>
+                {
+                    collision.transform.position = new Vector3(startPos.position.x, collision.transform.position.y, startPos.position.z);
+                    Blackout.Inst.Pass(false);
+                });
+
                 //collision.transform.position = new Vector3(lastPlatform.transform.position.x, collision.transform.position.y, lastPlatform.transform.position.z);
             }
         }
