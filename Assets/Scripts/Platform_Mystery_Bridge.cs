@@ -18,10 +18,12 @@ public class Platform_Mystery_Bridge : MonoBehaviour
     private static Platform_Mystery_Bridge lastPlatform;
 
     private MeshRenderer m_meshRenderer;
+    private Rigidbody m_rigidbody;
 
     private void Start()
     {
         m_meshRenderer = GetComponent<MeshRenderer>();
+        m_rigidbody = GetComponent<Rigidbody>();
 
         ChangeAvailable(isAvailable);
     }
@@ -48,12 +50,11 @@ public class Platform_Mystery_Bridge : MonoBehaviour
             {
                 Player.Instance.SetMove = false;
 
+                m_rigidbody.isKinematic = false;
                 Blackout.Inst.Pass(true, _event: () =>
                 {
-
                     Player.Instance.SetMove = true;
-
-                    other.transform.position = new Vector3(startPos.position.x, other.transform.position.y, startPos.position.z);
+                    other.transform.position = startPos.position;
                     Blackout.Inst.Pass(false);
 
                 });
