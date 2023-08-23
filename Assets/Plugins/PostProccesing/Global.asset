@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1245450426013413386
+--- !u!114 &-7127748138178578751
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 0
+    value: 1
   intensity:
-    overrideState: 0
-    value: 7.52
+    overrideState: 1
+    value: 1
   threshold:
     overrideState: 0
     value: 1
@@ -29,11 +29,11 @@ MonoBehaviour:
     overrideState: 0
     value: 65472
   diffusion:
-    overrideState: 0
-    value: 7
+    overrideState: 1
+    value: 6.08
   anamorphicRatio:
     overrideState: 0
-    value: 0
+    value: -0.67
   color:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: Global
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: -1245450426013413386}
+  - {fileID: -7127748138178578751}
   - {fileID: 2580933662463661133}
 --- !u!114 &2580933662463661133
 MonoBehaviour:
