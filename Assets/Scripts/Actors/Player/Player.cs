@@ -19,8 +19,10 @@ public class Player : Actor, IMovable, IObserver
     [SerializeField][Range(0, 15)] private float _jumpForce;
     [SerializeField] private Transform _body; // тело которое крутим, иначе ломается камера
     [SerializeField][Range(0, 15)] private float maxDistanceForInteract;
+    [SerializeField] private Transform _interactRayObject; // объект из которого будет пускаться луч для взаимодействия
     [SerializeField] private bool _isInteracting;
     private bool _canJump;
+    private Ray _interactRay;
     public bool SetMove
     {
         set
@@ -115,6 +117,8 @@ public class Player : Actor, IMovable, IObserver
 
     private void Update()
     {
+        
+        Debug.DrawRay(_interactRayObject.position, _interactRayObject.forward, Color.red);
     }
 
     public void TryInteract()
@@ -122,9 +126,9 @@ public class Player : Actor, IMovable, IObserver
       
         _isInteracting = true;
 
-        Ray ray = new Ray(_body.transform.position, _body.transform.forward);
+        _interactRay = new Ray(_interactRayObject.position, _interactRayObject.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, maxDistanceForInteract))
+        if (Physics.Raycast(_interactRay, out hit, maxDistanceForInteract))
         {
             var interactable = hit.collider.GetComponent<IInteractable>();
             if (interactable != null)
@@ -135,6 +139,9 @@ public class Player : Actor, IMovable, IObserver
 
         _isInteracting = false;
     }
+
+
+
     public void FixedUpdate()
     {
         Move();
@@ -145,16 +152,14 @@ public class Player : Actor, IMovable, IObserver
     {
         if (!_canJump) return;
         _rb.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
+        _animator.SetTrigger("Jump");
         _canJump = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        _canJump = true;
         
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            _canJump = true;
-        }
     }
 }
 
