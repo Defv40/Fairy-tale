@@ -41,8 +41,9 @@ public class Platform_Mystery_Bridge : MonoBehaviour
         {
             int lastNum = int.Parse(m_text.text);
             int num = RandomNumDontRepeat(lastNum);
+            Debug.LogWarning(num);
 
-            if (id <= num)
+            if (id <= lastNum)
             {
                 m_text.text = num.ToString();
                 lastPlatform = this;
