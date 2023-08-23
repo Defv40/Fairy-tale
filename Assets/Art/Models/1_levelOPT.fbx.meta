@@ -3,7 +3,97 @@ guid: 6edda56722491b64d83e3a14a295935c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorMaterial
+    second: {fileID: 2100000, guid: e45658ee9f8f11940a63544af6611fed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 637dd040005a04148b084d05f4333ced, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 28e89c86b750e0141a95bc67276a8338, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 6671d5e5995b7a647b44f56c1483479a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: ba3d7a8381143f543bfc2a81ac436971, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 529dd41498584cd469d6c7b31b5fe901, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: b87fb8bec7047cf44a01ab33ed7042a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: a72caadbb1b62cd4eb3589af3712ab18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: bf3ef827638cdd346857ebe6c42e8354, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: e6722cbf817f4174c8d04ab9d2ae34a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ObiDivan
+    second: {fileID: 2100000, guid: 4714020bd46a3bc4593746f7eea1c44a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 674d7f7549e67da4990f7c9d573a32a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: divan
+    second: {fileID: 2100000, guid: 0f9a9cab130491c43b5b9ee9626b34ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kaminHoll
+    second: {fileID: 2100000, guid: 45d5c24528621f9469ec5f66c714d295, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kmain
+    second: {fileID: 2100000, guid: 0eafa5dc9bfca1c4ba8140c50b073ef1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tree part
+    second: {fileID: 2100000, guid: b8e892336e635aa4cbf1a7bd4b61f8d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall stone
+    second: {fileID: 2100000, guid: 290c657eea909bf459fe1fbe8e963d08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall wood
+    second: {fileID: 2100000, guid: e59ec9d6f30286e469433b32d64cf441, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
