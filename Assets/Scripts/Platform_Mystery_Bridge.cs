@@ -39,10 +39,12 @@ public class Platform_Mystery_Bridge : MonoBehaviour
     {
         if (other.GetComponent<Collider>().tag.Equals("Player"))
         {
-            m_text.text = Random.Range(0, 6).ToString();
+            int lastNum = int.Parse(m_text.text);
+            int num = RandomNumDontRepeat(lastNum);
 
-            if (id <= int.Parse(m_text.text))
+            if (id <= num)
             {
+                m_text.text = num.ToString();
                 lastPlatform = this;
                 if (!isLocked) ChangeAvailable(true);
             }
@@ -62,7 +64,19 @@ public class Platform_Mystery_Bridge : MonoBehaviour
 
                 //collision.transform.position = new Vector3(lastPlatform.transform.position.x, collision.transform.position.y, lastPlatform.transform.position.z);
             }
+            else m_text.text = num.ToString();
         }
+    }
+
+    private int RandomNumDontRepeat(int lastNum)
+    {
+        int n = 0;
+        do
+        {
+            n = Random.Range(0, 6);
+
+        } while (n == lastNum);
+        return n;
     }
     //private void OnCollisionEnter(Collision collision)
     //{
