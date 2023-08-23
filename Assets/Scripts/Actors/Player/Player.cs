@@ -77,7 +77,7 @@ public class Player : Actor, IMovable, IObserver
         _moveDirection = _cameraTarget.forward * _input.MovementInput.y + _cameraTarget.right * _input.MovementInput.x;
         _moveDirection.Normalize();
         _moveDirection = _moveDirection * Speed;
-        _moveDirection.y = _rb.velocity.y;
+        _moveDirection.y = Mathf.Clamp(_rb.velocity.y, -30, 30);
         _rb.velocity = _moveDirection;
 
 
