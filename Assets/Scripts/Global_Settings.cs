@@ -62,8 +62,6 @@ public class Global_Settings : MonoBehaviour
         if (!resolution.Equals(Screen.currentResolution)) Screen.SetResolution(resolution.width, resolution.height, true);
 
         XDocument xSettings;
-        //if (File.Exists(pathSettings)) xSettings = XDocument.Load(pathSettings);
-        //else
         xSettings = new XDocument();
 
         XElement xRoot = new XElement("settings");
