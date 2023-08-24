@@ -4654,10 +4654,6 @@ PrefabInstance:
       propertyPath: _invetory
       value: 
       objectReference: {fileID: 1062897759}
-    - target: {fileID: 247053581786738483, guid: 9f1c2c141cbafdb42b2fe89455eb7583, type: 3}
-      propertyPath: _meshRenderer
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1509587765866750392, guid: 9f1c2c141cbafdb42b2fe89455eb7583, type: 3}
       propertyPath: m_Name
       value: Firefly (5)
