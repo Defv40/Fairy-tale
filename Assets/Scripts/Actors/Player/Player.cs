@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Player : Actor, IMovable, IObserver
 {
+
     
 
     private Rigidbody _rb;
@@ -163,12 +164,6 @@ public class Player : Actor, IMovable, IObserver
     {
         _canJump = true;
         
-    }
-
-    public void PlaySound()
-    {
-        _audioSource.clip = audioClips[2];
-        _audioSource.Play();
     }
 }
 

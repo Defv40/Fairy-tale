@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-[RequireComponent (typeof(AudioSource))]
+
 [RequireComponent(typeof(Animator))]
 public class Chest : InteractableObject
 {
@@ -9,14 +9,14 @@ public class Chest : InteractableObject
 
     private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+       
         _animator = GetComponent<Animator>();
     }
 
     public override void Interact()
     {
         _animator.SetTrigger("Interact");
-        _audioSource.Play();
+        SoundSystem.Instance.PlaySound(_sounds[0]);
         //gameObject.layer = LayerMask.NameToLayer("Default");
     }
 }

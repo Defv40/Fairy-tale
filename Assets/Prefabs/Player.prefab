@@ -211,6 +211,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: d9e28684f229b2447874274bf70ae644, type: 3}
   - {fileID: 8300000, guid: 0d54b3c030409b845a264d22d35332b0, type: 3}
+  - {fileID: 8300000, guid: 540b6dfafbc98334bbbe5f3247bf1edf, type: 3}
 --- !u!114 &4423557606172600843
 MonoBehaviour:
   m_ObjectHideFlags: 0

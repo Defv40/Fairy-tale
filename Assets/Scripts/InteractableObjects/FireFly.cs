@@ -3,7 +3,6 @@ using UnityEngine;
 using System.Collections;
 
 
-
 public class FireFly : Item
 {
     [SerializeField] private float _lifeTime = 1f;
@@ -17,7 +16,7 @@ public class FireFly : Item
      private Transform p4; // куда полетит
     private SphereCollider _collider;
 
-    [SerializeField] private MeshRenderer _meshRenderer;
+    [SerializeField] private ParticleSystem _particle;
 
     private Inventory _playerInventory;
 
@@ -27,7 +26,7 @@ public class FireFly : Item
     private void Awake()
     {
         _playerInventory = GameObject.FindAnyObjectByType<Inventory>();
-        _meshRenderer = GetComponent<MeshRenderer>();
+        _particle = GetComponent<ParticleSystem>();
         _collider = GetComponent<SphereCollider>();
         _initialPosition = transform.position;
     }
@@ -38,8 +37,10 @@ public class FireFly : Item
     public override void Interact()
     {
         _invetory.AddItem(this);
-       
-        _meshRenderer.enabled = false;
+        SoundSystem.Instance.PlaySound(_sounds[0]);
+
+        _particle.Stop();
+        _particle.Clear();
         _collider.enabled = false;
         StartCoroutine(LifeTimeInInventory());
     }
@@ -90,9 +91,8 @@ public class FireFly : Item
 
         Vector3 offset = new Vector3(startPoint.x, startPoint.y + 2, startPoint.z);
         gameObject.transform.position = offset;
-        _meshRenderer.enabled = true;
+        _particle.Play();
        
-
         StartCoroutine(Fly());
  
     }
