@@ -135,7 +135,7 @@ Transform:
   - {fileID: 6229179601494599771}
   - {fileID: 9135257987266230934}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5442881157222031983
 Rigidbody:
@@ -207,6 +207,10 @@ MonoBehaviour:
   _body: {fileID: 9135257987266230934}
   maxDistanceForInteract: 2
   _interactRayObject: {fileID: 7819822452889759662}
+  _audioSource: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: d9e28684f229b2447874274bf70ae644, type: 3}
+  - {fileID: 8300000, guid: 0d54b3c030409b845a264d22d35332b0, type: 3}
 --- !u!114 &4423557606172600843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,8 +251,8 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 0d54b3c030409b845a264d22d35332b0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
+  m_Pitch: 0.95
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -290,7 +294,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

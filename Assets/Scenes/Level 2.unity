@@ -516,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 0}
   _invetory: {fileID: 1062897759}
-  _lifeTime: 25
+  _lifeTime: 3
   _initialPosition: {x: 0, y: 0, z: 0}
   player: {fileID: 1062897761}
   ratioSpeed: 2
@@ -8371,7 +8371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 0}
   _invetory: {fileID: 1062897759}
-  _lifeTime: 25
+  _lifeTime: 3
   _initialPosition: {x: 0, y: 0, z: 0}
   player: {fileID: 1062897761}
   ratioSpeed: 2
@@ -9068,7 +9068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 0}
   _invetory: {fileID: 1062897759}
-  _lifeTime: 25
+  _lifeTime: 3
   _initialPosition: {x: 0, y: 0, z: 0}
   player: {fileID: 1062897761}
   ratioSpeed: 2.02
@@ -9222,7 +9222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 0}
   _invetory: {fileID: 1062897759}
-  _lifeTime: 25
+  _lifeTime: 3
   _initialPosition: {x: 0, y: 0, z: 0}
   player: {fileID: 1062897761}
   ratioSpeed: 2
@@ -9418,7 +9418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 0}
   _invetory: {fileID: 1062897759}
-  _lifeTime: 25
+  _lifeTime: 3
   _initialPosition: {x: 0, y: 0, z: 0}
   player: {fileID: 1062897761}
   ratioSpeed: 2
