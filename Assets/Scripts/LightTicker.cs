@@ -10,16 +10,19 @@ public class LightTicker : MonoBehaviour
     public float tick;
 
     private float tickClone;
+    private float startIntensivity;
 
     private void Start()
     {
         tickClone = tick;
+        startIntensivity = m_light.intensity;
     }
 
     private void Update()
     {
         if (tick <= 0)
         {
+            m_light.intensity = startIntensivity;
             GetComponent<Light>().intensity += Random.Range(-rangeIntensivity, rangeIntensivity);
 
             tick = tickClone;
