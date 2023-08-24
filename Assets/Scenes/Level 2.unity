@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 177943042}
   - component: {fileID: 177943041}
   - component: {fileID: 177943040}
+  - component: {fileID: 177943043}
   m_Layer: 8
   m_Name: Firefly
   m_TagString: InteractObject
@@ -500,6 +501,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177943038}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &177943043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177943038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd1eab428f10954c9b69a29eeb2cf43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _invetory: {fileID: 0}
+  _lifeTime: 0
+  _initialPoint: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
 --- !u!1 &220204465
 GameObject:
   m_ObjectHideFlags: 0
