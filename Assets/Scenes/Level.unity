@@ -8198,29 +8198,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1867600949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2893155802814082241, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
-  m_PrefabInstance: {fileID: 393945172372602090}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1867600954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867600949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87b3c345c3ba4c4438c6c9c0d9eb7c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _allIconsForInventory:
-  - {fileID: 21300000, guid: 204f69073614cdc4da6d2b5ca19aff44, type: 3}
-  - {fileID: 21300000, guid: ca3dd595777bdee4e9df21f1e8b08acd, type: 3}
-  - {fileID: 21300000, guid: a9f0cb4d319b913409070125ce3187f3, type: 3}
-  - {fileID: 21300000, guid: 0e1113218b6f82b43971446ef8f7ead3, type: 3}
-  _itemPrefab: {fileID: 4972419099745849907, guid: deca4f1d3008d3944a46fca4a23c2daf, type: 3}
 --- !u!1 &1871447312
 GameObject:
   m_ObjectHideFlags: 0
@@ -8777,10 +8754,7 @@ PrefabInstance:
     - {fileID: 4245375105532010273, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
     - {fileID: 4404587688718166339, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2893155802814082241, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1867600954}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
 --- !u!1001 &1718082376833034550
 PrefabInstance:
