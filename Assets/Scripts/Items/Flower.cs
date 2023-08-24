@@ -1,9 +1,12 @@
-﻿public class Flower : Item
-{
+﻿using UnityEngine;
+
+public class Flower : Item
+{   
     public override void Interact()
     {
-       Player.Instance.PlaySound();
-       base.Interact();
+        
+        SoundSystem.Instance.PlaySound(_sounds[0]);
+        base.Interact();
     }
 }
 

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2278559137589794009}
   - component: {fileID: 247053581786738483}
   - component: {fileID: 5029747385936672097}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Firefly
-  m_TagString: Untagged
+  m_TagString: InteractObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4901,14 +4901,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd1eab428f10954c9b69a29eeb2cf43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 540b6dfafbc98334bbbe5f3247bf1edf, type: 3}
   _invetory: {fileID: 0}
-  _lifeTime: 25
+  _lifeTime: 3
   _initialPosition: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
-  ratioSpeed: 2
+  ratioSpeed: 4
   p2: {fileID: 0}
   p3: {fileID: 0}
-  _meshRenderer: {fileID: 0}
+  _particle: {fileID: 0}
 --- !u!135 &5029747385936672097
 SphereCollider:
   m_ObjectHideFlags: 0
