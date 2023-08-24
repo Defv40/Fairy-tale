@@ -1308,6 +1308,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e9c1af845e9734bb52c48875ce6727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireFlies:
+  - {fileID: 177943043}
+  - {fileID: 1747634319}
+  - {fileID: 1798397416}
+  - {fileID: 1835903069}
+  - {fileID: 1398272108}
 --- !u!224 &596287193 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6803257582018090585, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
@@ -7783,6 +7789,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a5a6f8939e10b934493965fc75bd9356, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: a5a6f8939e10b934493965fc75bd9356, type: 3}
+      propertyPath: m_Name
+      value: CampFire
       objectReference: {fileID: 0}
     - target: {fileID: -5568371526223589888, guid: a5a6f8939e10b934493965fc75bd9356, type: 3}
       propertyPath: m_Layer
