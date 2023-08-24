@@ -1,8 +1,7 @@
 
 using UnityEngine;
-using Unity;
 using System.Collections;
-using static UnityEditor.Progress;
+
 
 
 public class FireFly : Item
