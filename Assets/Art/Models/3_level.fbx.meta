@@ -3,7 +3,72 @@ guid: 1da29605ec794354cbd89a1e59222c0c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 2374e5b053c16cf48881fd04c537b6ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: 8ef4981ae0eb6f74f9c1aa327cca35a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light Of lamp
+    second: {fileID: 2100000, guid: fe0af8b5a5f06d64f95f61ac8fcf4d4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light_
+    second: {fileID: 2100000, guid: 5ff32dbf767223a49b5b4d64f308e497, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: bec79795700cbc34198cf33d425d5a98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree
+    second: {fileID: 2100000, guid: 8a0b35a8ff7885945afec77e8a996d09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallStone
+    second: {fileID: 2100000, guid: 1b1a56fbdebb3054488bfaa9ee9589fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 0f8f56b10b3c8464cb2f346bf7225a90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brown
+    second: {fileID: 2100000, guid: 000c665e6608fbd45b08c6b40fdc727f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gold
+    second: {fileID: 2100000, guid: c05dfb2eae0c6834e803a2c7e9ba8fa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iron
+    second: {fileID: 2100000, guid: 434d446561f56ba48bfb100f79694aec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pURPLE
+    second: {fileID: 2100000, guid: cac275144888f4e4e91d0c6f7d6121d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red
+    second: {fileID: 2100000, guid: 1079eacb39e663b4fa103dcebce76f56, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

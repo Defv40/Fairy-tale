@@ -1,4 +1,3 @@
-
 using TMPro;
 using UnityEngine;
 
@@ -12,7 +11,9 @@ public class Platform_Mystery_Bridge : MonoBehaviour
     [SerializeField] private Material m_notAvailable;
 
     [SerializeField] private Transform startPos;
-    [SerializeField] private TMP_Text m_text;
+
+    [SerializeField] private Light[] torches;
+    //[SerializeField] private TMP_Text m_text;
 
     private static Platform_Mystery_Bridge lastPlatform;
 
@@ -30,20 +31,26 @@ public class Platform_Mystery_Bridge : MonoBehaviour
     public void ChangeAvailable(bool isAvailable)
     {
         this.isAvailable = isAvailable;
-        if (isAvailable) m_meshRenderer.material = m_available;
-        else m_meshRenderer.material = m_notAvailable;
+        Material[] mats = new Material[2];
+        mats[0] = m_meshRenderer.materials[0];
+        mats[1] = m_available;
+
+        if (isAvailable) mats[1] = m_available;
+        else mats[1] = m_notAvailable;
+
+        m_meshRenderer.materials = mats;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Collider>().tag.Equals("Player"))
         {
-            int lastNum = int.Parse(m_text.text);
-            int num = RandomNumDontRepeat(lastNum); 
+            int lastNum = 5;
+            int num = 5; 
 
             if (id <= lastNum)
             {
-                m_text.text = num.ToString();
+                //m_text.text = num.ToString();
                 lastPlatform = this;
                 if (!isLocked) ChangeAvailable(true);
             }
@@ -61,7 +68,7 @@ public class Platform_Mystery_Bridge : MonoBehaviour
                 });
 
             }
-            else m_text.text = num.ToString();
+            //else m_text.text = num.ToString();
         }
     }
 
