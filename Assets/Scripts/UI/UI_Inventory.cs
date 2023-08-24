@@ -37,11 +37,11 @@ public class UI_Inventory : MonoBehaviour, IObserver
         _itemIcons.Add(nameof(Mice), _allIconsForInventory[1]);
         _itemIcons.Add(nameof(Wallet), _allIconsForInventory[2]);
         _itemIcons.Add(nameof(Flower), _allIconsForInventory[3]);
+        _itemIcons.Add(nameof(FireFly), _allIconsForInventory[4]);
     }
 
     public void ClearChildren()
     {
-        Debug.Log(transform.childCount);
         int i = 0;
 
         //Array to hold all child obj
