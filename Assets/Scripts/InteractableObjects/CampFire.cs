@@ -1,11 +1,12 @@
 
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class CampFire : InteractableObject
 {
     private Inventory _playerInventory;
-
+    [SerializeField] private List<FireFly> fireFlies = new List<FireFly>();
     private void Awake()
     {
         _playerInventory = GameObject.FindAnyObjectByType<Inventory>();  
@@ -27,12 +28,13 @@ public class CampFire : InteractableObject
             //}
 
             _playerInventory.PlayerInventory.RemoveAll((item) => item is FireFly);
+            fireFlies.ForEach((item) => Destroy(item.gameObject));
+
             NotificationCenter.Intastance.NotifyObserver(EventType.OnRemoveItemFromInventory);
         }
         else
         {
-            Debug.Log("Не хватает нужно больше светлячков, ");
-            Debug.Log($"У вас сейчас {item}");
+            Debug.Log("Не хватает нужно больше светлячков, " + "У вас сейчас {item}");
         }
    
 

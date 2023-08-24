@@ -1,5 +1,6 @@
 
 
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -20,7 +21,9 @@ public class Player : Actor, IMovable, IObserver
     [SerializeField] private Transform _body; // тело которое крутим, иначе ломается камера
     [SerializeField][Range(0, 15)] private float maxDistanceForInteract;
     [SerializeField] private Transform _interactRayObject; // объект из которого будет пускаться луч для взаимодействия
-    
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private List<AudioClip> audioClips = new List<AudioClip>();
+    public bool IsInteracting { get; private set; }
     private bool _canJump;
     private Ray _interactRay;
     public bool SetMove
@@ -58,7 +61,7 @@ public class Player : Actor, IMovable, IObserver
 
     public void OnNotify(EventType type)
     {
-        if (type == EventType.OnInteract) TryInteract();
+       
     }
 
     private void Awake()
@@ -67,6 +70,7 @@ public class Player : Actor, IMovable, IObserver
         
         Instance = this;
 
+        _audioSource = GetComponent<AudioSource>();
         _rb = GetComponent<Rigidbody>();
         _input = GetComponent<PlayerInput>();
        
@@ -89,12 +93,27 @@ public class Player : Actor, IMovable, IObserver
 
     private void PlayAnimation()
     {
-        if (_rb.velocity.magnitude > 0.5)
+
+        float speedXZ = new Vector3(_rb.velocity.x, 0, _rb.velocity.z).magnitude;
+
+     
+        if (!_canJump) return; // если в прыжке
+
+       
+     
+        if (speedXZ > 0.5)
         {
             _animator.SetBool(Animator.StringToHash("isRunnnig"), true);
+            _audioSource.clip = audioClips[1]; // звук бега
+            if (!_audioSource.isPlaying)
+            {
+                _audioSource.Play();
+            }   
         }
+
         else
         {
+            _audioSource.Stop();
             _animator.SetBool(Animator.StringToHash("isRunnnig"), false);
         }
     }
@@ -118,29 +137,8 @@ public class Player : Actor, IMovable, IObserver
     private void Update()
     {
         
-        Debug.DrawRay(_interactRayObject.position, _interactRayObject.forward, Color.red);
-    }
-
-    public void TryInteract()
-    {
       
-       
-
-        _interactRay = new Ray(_interactRayObject.position, _interactRayObject.forward);
-        RaycastHit hit;
-        if (Physics.Raycast(_interactRay, out hit, maxDistanceForInteract))
-        {
-            var interactable = hit.collider.GetComponent<IInteractable>();
-            if (interactable != null)
-            {
-                interactable.Interact();
-            }
-        }
-
-       
     }
-
-
 
     public void FixedUpdate()
     {
@@ -154,6 +152,11 @@ public class Player : Actor, IMovable, IObserver
         _rb.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
         _animator.SetTrigger("Jump");
         _canJump = false;
+
+        
+        _audioSource.clip = audioClips[0];
+        _audioSource.Play(); // прыжок
+       
     }
 
     private void OnCollisionEnter(Collision collision)
