@@ -1213,14 +1213,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7819822452889759662, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.545
+    - target: {fileID: 6215544089477278829, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215544089477278829, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: m_Pitch
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215544089477278829, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8246024081859519645, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
-      propertyPath: _interactRayObject
+      propertyPath: audioClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246024081859519645, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: audioClips.Array.data[0]
       value: 
-      objectReference: {fileID: 1096790849}
+      objectReference: {fileID: 8300000, guid: d9e28684f229b2447874274bf70ae644, type: 3}
+    - target: {fileID: 8246024081859519645, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d54b3c030409b845a264d22d35332b0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1831,7 +1847,7 @@ GameObject:
   - component: {fileID: 695091416}
   - component: {fileID: 695091419}
   - component: {fileID: 695091420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1846,7 +1862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695091414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.843, y: 3.2106, z: 2.01}
+  m_LocalPosition: {x: -4.45, y: 1.4605999, z: -15.14}
   m_LocalScale: {x: 1.4427521, y: 1.4427521, z: 1.4427521}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7391,11 +7407,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!4 &1096790849 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7819822452889759662, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
-  m_PrefabInstance: {fileID: 645811654}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1111014018
 GameObject:
   m_ObjectHideFlags: 0

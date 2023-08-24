@@ -17,6 +17,6 @@ public class Chest : InteractableObject
     {
         _animator.SetTrigger("Interact");
         _audioSource.Play();
-        gameObject.layer = LayerMask.NameToLayer("Default");
+        //gameObject.layer = LayerMask.NameToLayer("Default");
     }
 }
