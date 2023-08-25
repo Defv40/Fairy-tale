@@ -8,15 +8,10 @@ public class DeadArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Player.Instance.SetMove = false;
-
-        Blackout.Inst.Pass(true, _event: () =>
+        if(other.tag.Equals("Player"))
         {
-            Player.Instance.SetMove = true;
-            other.transform.position = startPos.position;
-            Blackout.Inst.Pass(false);
-
-        });
+            Mystery_Bridge.Inst.Defeat();
+        }
 
     }
 }
