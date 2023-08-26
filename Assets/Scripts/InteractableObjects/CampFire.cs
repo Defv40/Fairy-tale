@@ -34,7 +34,7 @@ public class CampFire : InteractableObject
         }
         else
         {
-            Debug.Log("Не хватает нужно больше светлячков, " + "У вас сейчас {item}");
+            Debug.Log("Не хватает нужно больше светлячков, " + $"У вас сейчас {item}"); ;
         }
    
 
