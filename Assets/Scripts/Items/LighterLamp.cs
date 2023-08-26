@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LighterLamp : InteractableObject
 {
-
+    [SerializeField] private GameObject ui_projector;
     private float baseFollowOffset;
     [SerializeField] private Transform lighterBody; // для горизонтального поворота
     [SerializeField] private Transform lamp; // для вертикального наклона
@@ -38,7 +38,7 @@ public class LighterLamp : InteractableObject
         Debug.Log(baseFollowOffset);
         transporter.m_CameraDistance = 18;
 
-       
+        ui_projector.SetActive(true);  
     }
 
     private void Update()
@@ -58,7 +58,7 @@ public class LighterLamp : InteractableObject
             Player.Instance.SetMove = true;
 
             transporter.m_CameraDistance = baseFollowOffset;
-
+            ui_projector.SetActive(false);
         }
     }
 
