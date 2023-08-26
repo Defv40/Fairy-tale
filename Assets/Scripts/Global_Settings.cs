@@ -1,5 +1,4 @@
 using System;
-
 using System.IO;
 using System.Xml.Linq;
 using UnityEngine;
@@ -14,7 +13,7 @@ public class Global_Settings : MonoBehaviour
 
     [Range(0, 2)] public int textureResolition;
     public ShadowResolution shadowResolution;
-    [Range(-1, 1)] public float brightness;
+    //[Range(-1, 1)] public float brightness;
     [Range(0, 3)] public int antiAliasing;
     [Range(0, 4)] public int vsync;
 
@@ -36,7 +35,6 @@ public class Global_Settings : MonoBehaviour
     private void Awake()
     {
         Init = this;
-        DontDestroyOnLoad(gameObject);
 
         if (resolution.width == 0 || resolution.height == 0) resolution = Screen.currentResolution;
         Load();
@@ -46,7 +44,7 @@ public class Global_Settings : MonoBehaviour
     {
         postProcessLayer.antialiasingMode = (PostProcessLayer.Antialiasing)antiAliasing;
         globalPostProcessVolume.profile.TryGetSettings(out globalColorGrading);
-        globalColorGrading.lift.value.w = brightness;
+        //globalColorGrading.lift.value.w = brightness;
 
         QualitySettings.shadowResolution = shadowResolution;
         QualitySettings.globalTextureMipmapLimit = textureResolition;
@@ -67,7 +65,7 @@ public class Global_Settings : MonoBehaviour
         XElement xRoot = new XElement("settings");
         XElement xTextureResolution = new XElement("textureResolution", textureResolition.ToString());
         XElement xShadowResolution = new XElement("shadowResolution", shadowResolution.ToString());
-        XElement xBrightness = new XElement("brightness", brightness.ToString());
+        //XElement xBrightness = new XElement("brightness", brightness.ToString());
         XElement xAntiAliasing = new XElement("antiAliasing", antiAliasing.ToString());
         XElement xVsync = new XElement("vsync", vsync.ToString());
 
@@ -79,7 +77,7 @@ public class Global_Settings : MonoBehaviour
 
         xRoot.Add(xTextureResolution);
         xRoot.Add(xShadowResolution);
-        xRoot.Add(xBrightness);
+        //xRoot.Add(xBrightness);
         xRoot.Add(xAntiAliasing);
         xRoot.Add(xVsync);
         xRoot.Add(xGlobalVolume);
@@ -99,7 +97,7 @@ public class Global_Settings : MonoBehaviour
             XElement xRoot = xSettings.Element("settings");
             textureResolition = int.Parse(xRoot.Element("textureResolution").Value);
             shadowResolution = (ShadowResolution)Enum.Parse(typeof(ShadowResolution), xRoot.Element("shadowResolution").Value);
-            brightness = float.Parse(xRoot.Element("brightness").Value);
+            //brightness = float.Parse(xRoot.Element("brightness").Value);
             antiAliasing = int.Parse(xRoot.Element("antiAliasing").Value);
             vsync = int.Parse(xRoot.Element("vsync").Value);
 
