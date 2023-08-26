@@ -4,9 +4,10 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class Global_Settings : MonoBehaviour
+public class Global_Settings : MonoBehaviour, ICloneable
 {
     public static Global_Settings Init { get; private set; }
+    public static Global_Settings InitOldValues { get; private set; }
 
     public PostProcessLayer postProcessLayer;
     public PostProcessVolume globalPostProcessVolume;
@@ -39,6 +40,7 @@ public class Global_Settings : MonoBehaviour
 
         resolution = Screen.currentResolution;
         Load();
+        InitOldValues = (Global_Settings)Clone();
     }
 
     private void UpdateValues()
@@ -97,6 +99,7 @@ public class Global_Settings : MonoBehaviour
         xSettings.Add(xRoot);
         xSettings.Save(pathSettings);
 
+        InitOldValues = (Global_Settings)Clone();
         UpdateValues();
     }
 
@@ -132,5 +135,10 @@ public class Global_Settings : MonoBehaviour
         }
 
         UpdateValues();
+    }
+
+    public object Clone()
+    {
+        return MemberwiseClone();
     }
 }

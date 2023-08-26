@@ -11,7 +11,7 @@ public class UI_Controls_Settings_Video : MonoBehaviour
     [SerializeField] private Toggle vsync;
     private Resolution[] resolutions;
 
-    private void Start()
+    private void OnEnable()
     {
         resolutions = (from r in Screen.resolutions where r.refreshRateRatio.Equals(Screen.currentResolution.refreshRateRatio) select r).ToArray();
 
@@ -25,7 +25,7 @@ public class UI_Controls_Settings_Video : MonoBehaviour
                 resolution.value = i;
         }
 
-        int vs = Global_Settings.Init.vsync;
+        int vs = Global_Settings.InitOldValues.vsync;
         if (vs == 0) vsync.isOn = false;
         else vsync.isOn = true;
     }

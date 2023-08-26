@@ -11,6 +11,11 @@ public class Game_Menu : MonoBehaviour
     [SerializeField] private GameObject[] elementsMenu;
     private Image image;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         image = GetComponent<Image>();

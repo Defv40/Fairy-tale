@@ -10,12 +10,12 @@ public class UI_Controls_Settings_Graphic : MonoBehaviour
     [SerializeField] private Toggle postProcessing;
     [SerializeField] private TMP_Dropdown antiAliasing;
 
-    private void Start()
+    private void OnEnable()
     {
-        textures.value = Global_Settings.Init.textureResolition;
-        shadow.value = (int)Global_Settings.Init.shadowResolution;
-        postProcessing.isOn = Global_Settings.Init.postProcessingEnabled;
-        antiAliasing.value = Global_Settings.Init.antiAliasing;
+        textures.value = Global_Settings.InitOldValues.textureResolition;
+        shadow.value = (int)Global_Settings.InitOldValues.shadowResolution;
+        postProcessing.isOn = Global_Settings.InitOldValues.postProcessingEnabled;
+        antiAliasing.value = Global_Settings.InitOldValues.antiAliasing;
     }
 
     public void Textures_DropDown_OnChanged(int value)
