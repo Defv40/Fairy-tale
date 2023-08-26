@@ -1621,6 +1621,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: bde69d7bfc10374468e7edab8c4ccce4, type: 2}
   - {fileID: 2100000, guid: 93d74294cb7f21e498e4960bc0784d6e, type: 2}
   _delayForFillWindowInSeconds: 2
+  ui_progress_bar: {fileID: 1046915683}
   currentProgress: 0
 --- !u!1 &834355873
 GameObject:

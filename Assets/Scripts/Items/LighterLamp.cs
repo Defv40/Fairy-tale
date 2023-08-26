@@ -57,7 +57,8 @@ public class LighterLamp : InteractableObject, IObserver
 
         ui_projector.SetActive(true);
 
-        NotificationCenter.Intastance.NotifyObserver(EventType.OnInteractLamper);
+        //if (!_canInteractWithWindow)
+            NotificationCenter.Intastance.NotifyObserver(EventType.OnInteractLamper);
     }
 
     private void Update()
@@ -74,6 +75,8 @@ public class LighterLamp : InteractableObject, IObserver
 
             canControll = false;
 
+
+
             Player.Instance.SetMove = true;
 
             transporter.m_CameraDistance = baseFollowOffset;
@@ -84,6 +87,7 @@ public class LighterLamp : InteractableObject, IObserver
         {
             TryInteractWithWindow();
         }
+
         DebugLine();
     }
     private void TryInteractWithWindow()
