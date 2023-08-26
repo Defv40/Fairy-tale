@@ -17,7 +17,17 @@ public class LighterLamp : InteractableObject
     public float verticalRotationLimit = 80f;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     private CinemachineFramingTransposer transporter;
+    private Material _currentLampMaterial;
+    [SerializeField] private Light lampLight;
+    private void OnEnable()
+    {
+        
+    }
 
+    private void OnDisable()
+    {
+        
+    }
     private void Awake()
     {
         virtualCamera = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
@@ -38,7 +48,9 @@ public class LighterLamp : InteractableObject
         Debug.Log(baseFollowOffset);
         transporter.m_CameraDistance = 18;
 
-        ui_projector.SetActive(true);  
+        ui_projector.SetActive(true);
+
+        NotificationCenter.Intastance.NotifyObserver(EventType.OnInteractLamper);
     }
 
     private void Update()
@@ -85,5 +97,34 @@ public class LighterLamp : InteractableObject
         // ѕримен€ем вертикальный поворот с лимитом
 
         lamp.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+    }
+
+    public void SetMaterial(Material material)
+    {
+        _currentLampMaterial = material;
+
+        Debug.Log(_currentLampMaterial.name);
+
+        ChangeLampColor();
+    }
+
+    private void ChangeLampColor()
+    {
+        Color lampColor = Color.white;
+
+        switch (_currentLampMaterial.name)
+        {
+            case "Red":
+                lampColor = Color.red;
+                break;
+            case "Green":
+                lampColor = Color.green;
+                break;
+            case "Blue":
+                lampColor = Color.blue;
+                break;
+        }
+
+        lampLight.color = lampColor;
     }
 }

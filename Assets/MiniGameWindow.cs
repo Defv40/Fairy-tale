@@ -4,11 +4,11 @@ using UnityEngine;
 
 public  class MiniGameWindow : MonoBehaviour
 {
-    private int _indexWindow; // для порядка в котором должен светить луч
+    [SerializeField] private int _indexWindow; // для порядка в котором должен светить луч
     private MeshRenderer _windowMesh;
-    private List<Material> _windowMaterials;
-    private Material _windowBaseMaterial;
-
+    [SerializeField] private List<Material> _windowMaterials;
+    [SerializeField]private Material _windowBaseMaterial;
+    private Material _currentMaterial;
     private void Awake()
     {
         _windowMesh = GetComponent<MeshRenderer>();
@@ -18,7 +18,13 @@ public  class MiniGameWindow : MonoBehaviour
     {
         _indexWindow = index;
         _windowMaterials = materials;
+       
         _windowMesh.SetMaterials(_windowMaterials);
+    }
+
+    public void Unfill()
+    {
+        _windowMesh.SetMaterials(new List<Material>() { _windowBaseMaterial});
     }
 
     public bool Compare(int index, Material material)

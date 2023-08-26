@@ -1541,6 +1541,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 109d6ea9176e9274eaa8ad2e040040e8, type: 2}
   - {fileID: 2100000, guid: bde69d7bfc10374468e7edab8c4ccce4, type: 2}
   - {fileID: 2100000, guid: 93d74294cb7f21e498e4960bc0784d6e, type: 2}
+  _delayForFillWindowInSeconds: 0.5
+  _baseMaterialWindow: {fileID: 2100000, guid: 890aca5fa22999c449507f88fb171337, type: 2}
 --- !u!1 &834355873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1707,7 @@ MonoBehaviour:
   verticalTurnSpeed: 0.1
   verticalRotationLimit: 50
   virtualCamera: {fileID: 0}
+  lampLight: {fileID: 654007186}
 --- !u!65 &869823411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2926,7 +2929,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1368660738}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 869823410}
+        m_TargetAssemblyTypeName: LighterLamp, Assembly-CSharp
+        m_MethodName: SetMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: bde69d7bfc10374468e7edab8c4ccce4, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1368660738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3542,7 +3557,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635172397}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 869823410}
+        m_TargetAssemblyTypeName: LighterLamp, Assembly-CSharp
+        m_MethodName: SetMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 109d6ea9176e9274eaa8ad2e040040e8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1635172397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3664,7 +3691,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1657363215}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 869823410}
+        m_TargetAssemblyTypeName: LighterLamp, Assembly-CSharp
+        m_MethodName: SetMaterial
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 93d74294cb7f21e498e4960bc0784d6e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1657363215
 MonoBehaviour:
   m_ObjectHideFlags: 0
