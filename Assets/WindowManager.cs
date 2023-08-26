@@ -11,9 +11,13 @@ public class WindowManager : MonoBehaviour, IObserver
     [SerializeField][Range(0, 10)] private float _delayForFillWindowInSeconds;
     //[SerializeField] private Material _baseMaterialWindow; // белый
     private Coroutine fillCoroutine;
+
+    [SerializeField] private GameObject ui_progress_bar;
+    [SerializeField] private int currentProgress = 0;
     private void Awake()
     {
         _windows = GameObject.FindObjectsByType<MiniGameWindow>(FindObjectsSortMode.None).ToList();
+      
     }
     private void OnEnable()
     {
@@ -26,7 +30,8 @@ public class WindowManager : MonoBehaviour, IObserver
     }
     private void Start()
     {
-        
+       
+        print("");
     }
     private List<MiniGameWindow> Shuffle(List<MiniGameWindow> windows)
     {
@@ -41,10 +46,18 @@ public class WindowManager : MonoBehaviour, IObserver
             windows[k] = windows[n];
             windows[n] = value;
         }
-        Debug.Log(windows.Count);
+       
         return windows;
     }
    
+    private void RenderProgress(bool active)
+    {
+        for (int i = 0; i < currentProgress; i++)
+        {
+            ui_progress_bar.transform.GetChild(i).gameObject.SetActive(active);
+        }
+    }
+
 private Material RandomMaterial(int startIndex, int endIndex, List<Material> allMaterials)
 {
     int randomIndex = UnityEngine.Random.Range(startIndex, endIndex);
@@ -54,7 +67,7 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
     private IEnumerator DelayForFillWindow()
     {
         int currentWindowIndex = 0;
-
+        NotificationCenter.Intastance.NotifyObserver(EventType.OnStartFillWindows);
         while (currentWindowIndex < _windows.Count)
         {
             yield return new WaitForSeconds(_delayForFillWindowInSeconds);
@@ -66,6 +79,9 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
             
         }
 
+        yield return new WaitForSeconds(_delayForFillWindowInSeconds);
+        UnfillWindow();
+        NotificationCenter.Intastance.NotifyObserver(EventType.OnEndFillWindows);
         fillCoroutine = null;
     }
 
@@ -81,6 +97,29 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
         _windows = Shuffle(_windows);
         UnfillWindow();
         fillCoroutine =  StartCoroutine(DelayForFillWindow());
+    }
+
+    public void NextLevel()
+    {
+      
+        currentProgress++;
+        RenderProgress(true);
+        if (currentProgress > 3)
+        {
+            Debug.Log("Победа!!");
+            UnfillWindow();
+        }
+        else
+        {
+            RandomParametrsForWindow();
+        }
+    }
+
+    public void ResetProgress()
+    {
+        RenderProgress(false);
+        currentProgress = 0;
+        RandomParametrsForWindow();
     }
 
     private void UnfillWindow()

@@ -6,5 +6,7 @@
     OnInteractObjectStay, // Пока стоишь в зоне взаимодействия
     OnPickItem, // подбор предмета в инвентарь
     OnRemoveItemFromInventory, // при использовании либо при выбрасывании
-    OnInteractLamper
+    OnInteractLamper,
+    OnEndFillWindows, // когда менеджер закончит заливать окна краской
+    OnStartFillWindows, // когда менеджер начнет заливать окна краской
 }

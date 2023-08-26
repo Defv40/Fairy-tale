@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LighterLamp : InteractableObject
+public class LighterLamp : InteractableObject, IObserver
 {
     [SerializeField] private GameObject ui_projector;
     private float baseFollowOffset;
@@ -19,19 +19,26 @@ public class LighterLamp : InteractableObject
     private CinemachineFramingTransposer transporter;
     private Material _currentLampMaterial;
     [SerializeField] private Light lampLight;
+
+    private bool _canInteractWithWindow = false;
+    private WindowManager windowManager;
+    // дл€ мини игры
+
+    [SerializeField] private int _currentWindowIndex; // текущий индекс окна который мы должны Unfill
     private void OnEnable()
     {
-        
+        NotificationCenter.Intastance.AddObserver(this);
     }
 
     private void OnDisable()
     {
-        
+        NotificationCenter.Intastance.RemoveObserver(this);
     }
     private void Awake()
     {
         virtualCamera = GameObject.FindFirstObjectByType<CinemachineVirtualCamera>();
         transporter = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        windowManager = GameObject.FindFirstObjectByType<WindowManager>();
     }
     public override void Interact()
     {
@@ -45,7 +52,7 @@ public class LighterLamp : InteractableObject
      
 
         baseFollowOffset = transporter.m_CameraDistance;
-        Debug.Log(baseFollowOffset);
+       
         transporter.m_CameraDistance = 18;
 
         ui_projector.SetActive(true);
@@ -72,14 +79,55 @@ public class LighterLamp : InteractableObject
             transporter.m_CameraDistance = baseFollowOffset;
             ui_projector.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.H) && _canInteractWithWindow)
+        {
+            TryInteractWithWindow();
+        }
+        DebugLine();
+    }
+    private void TryInteractWithWindow()
+    {
+        Ray ray = new Ray(lampLight.transform.position, lampLight.transform.forward);
+        RaycastHit hit;
+    
+        if (Physics.Raycast(ray, out hit, 100f, ~LayerMask.NameToLayer("WindowMiniGame")))
+        {
+            
+            if (hit.collider.gameObject.TryGetComponent<MiniGameWindow>(out MiniGameWindow window))
+            {
+                bool rightWindow = window.Compare(_currentWindowIndex, _currentLampMaterial);
+                if (rightWindow)
+                {
+                    Debug.Log("правильное окно");
+                    _currentWindowIndex++;
+                    if (_currentWindowIndex > 3)
+                    {
+                        _currentWindowIndex = 0;
+                        windowManager.NextLevel();
+                    }
+                }
+                else
+                {
+                    Debug.Log("Ќе то окно");
+                    _currentWindowIndex = 0;
+                    windowManager.ResetProgress();
+                }
+            }
+        }
     }
 
+    private void DebugLine()
+    {
+        Debug.DrawRay(lampLight.transform.position, lampLight.transform.forward * 100f, Color.red);
+    }
+    
     private void Move()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
-        Debug.Log("here");
-        Debug.Log(horizontalInput);
+      
+        
         if (horizontalInput != 0f) // ≈сли нажата клавиша A или D
         {
             float targetRotation = lighterBody.eulerAngles.y + horizontalInput * turnSpeed;
@@ -126,5 +174,18 @@ public class LighterLamp : InteractableObject
         }
 
         lampLight.color = lampColor;
+    }
+
+    public void OnNotify(EventType type)
+    {
+        if (EventType.OnEndFillWindows == type)
+        {
+            _canInteractWithWindow = true;
+        }
+
+        if (EventType.OnStartFillWindows == type)
+        {
+            _canInteractWithWindow = false;
+        }
     }
 }

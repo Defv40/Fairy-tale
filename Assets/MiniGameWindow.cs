@@ -29,6 +29,6 @@ public  class MiniGameWindow : MonoBehaviour
 
     public bool Compare(int index, Material material)
     {
-        return index == _indexWindow && material == _windowMaterials[0];
+        return index == _indexWindow && _windowMaterials[0].Equals(material);
     }
 }

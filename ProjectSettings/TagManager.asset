@@ -19,8 +19,8 @@ TagManager:
   - InteractObject
   - InteractArea
   - PostProcessing
-  - 
-  - 
+  - WindowMiniGame
+  - RayLamp
   - 
   - 
   - 
