@@ -1,8 +1,23 @@
 
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Controls_Settings_Graphic : MonoBehaviour
 {
+    [SerializeField] private TMP_Dropdown textures;
+    [SerializeField] private TMP_Dropdown shadow;
+    [SerializeField] private Toggle postProcessing;
+    [SerializeField] private TMP_Dropdown antiAliasing;
+
+    private void Start()
+    {
+        textures.value = Global_Settings.Init.textureResolition;
+        shadow.value = (int)Global_Settings.Init.shadowResolution;
+        postProcessing.isOn = Global_Settings.Init.postProcessingEnabled;
+        antiAliasing.value = Global_Settings.Init.antiAliasing;
+    }
+
     public void Textures_DropDown_OnChanged(int value)
     {
         Global_Settings.Init.textureResolition = value;
@@ -13,9 +28,9 @@ public class UI_Controls_Settings_Graphic : MonoBehaviour
         Global_Settings.Init.shadowResolution = (ShadowResolution)value;
     }
 
-    public void PostProccesing_DropDown_OnChanged(int value)
+    public void PostProccesing_Toggle_OnChanged(bool value)
     {
-        // доделать
+        Global_Settings.Init.postProcessingEnabled = value;
     }
 
     public void AntiAliasing_DropDown_OnChanged(int value)

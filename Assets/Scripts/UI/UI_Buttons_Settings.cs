@@ -7,14 +7,12 @@ public class UI_Buttons_Settings : MonoBehaviour
     [SerializeField] private GameObject o_volume;
     [SerializeField] private GameObject o_video;
     [SerializeField] private GameObject o_graphic;
-    [SerializeField] private GameObject o_controls;
 
     private void DisableAllAdditionalWindows()
     {
         o_volume.SetActive(false);
         o_video.SetActive(false);
         o_graphic.SetActive(false);
-        o_controls.SetActive(false);
     }
 
     public void Back_OnClick()
@@ -40,12 +38,6 @@ public class UI_Buttons_Settings : MonoBehaviour
     {
         DisableAllAdditionalWindows();
         o_graphic.SetActive(true);
-    }
-
-    public void Controls_OnClick()
-    {
-        DisableAllAdditionalWindows();
-        o_controls.SetActive(true);
     }
 
     public void Save_OnClick() 

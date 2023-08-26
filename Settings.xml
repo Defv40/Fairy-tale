@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <settings>
   <textureResolution>0</textureResolution>
   <shadowResolution>VeryHigh</shadowResolution>
-  <brightness>0</brightness>
   <antiAliasing>1</antiAliasing>
   <vsync>1</vsync>
+  <postProcessing>True</postProcessing>
   <globalVolume>1</globalVolume>
   <nusicVolume>1</nusicVolume>
   <soundsVolume>1</soundsVolume>
-  <resolution>2560x1440</resolution>
+  <resolution>800x600</resolution>
 </settings>
