@@ -74,7 +74,9 @@ public class Player : Actor, IMovable, IObserver
         _audioSource = GetComponent<AudioSource>();
         _rb = GetComponent<Rigidbody>();
         _input = GetComponent<PlayerInput>();
-       
+
+
+        SetMove = false;
     }
 
     public void Move()

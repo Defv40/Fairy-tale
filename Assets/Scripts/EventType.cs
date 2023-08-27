@@ -9,4 +9,5 @@
     OnInteractLamper,
     OnEndFillWindows, // когда менеджер закончит заливать окна краской
     OnStartFillWindows, // когда менеджер начнет заливать окна краской
+    OnCompleteLevel
 }

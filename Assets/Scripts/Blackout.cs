@@ -11,10 +11,15 @@ public class Blackout : MonoBehaviour
 
     private Image image;
 
-    private void Start()
+    private void Awake()
     {
         Inst = this;
         image = GetComponent<Image>();
+    }
+    private void Start()
+    {
+       
+   
     }
 
     public void Pass(bool toBlack, float speed = 0.35f, EventAfterPass _event = null)

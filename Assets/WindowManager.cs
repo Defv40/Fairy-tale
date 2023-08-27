@@ -14,6 +14,8 @@ public class WindowManager : MonoBehaviour, IObserver
 
     [SerializeField] private GameObject ui_progress_bar;
     [SerializeField] private int currentProgress = 0;
+
+    [SerializeField] private AudioClip[] _audioClips;
     private void Awake()
     {
         _windows = GameObject.FindObjectsByType<MiniGameWindow>(FindObjectsSortMode.None).ToList();
@@ -119,6 +121,7 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
     {
         RenderProgress(false);
         currentProgress = 0;
+        SoundSystem.Instance.PlaySound(_audioClips[0]);
         RandomParametrsForWindow();
     }
 
@@ -129,4 +132,6 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
             window.Unfill();
         }
     }
+
+    
 }

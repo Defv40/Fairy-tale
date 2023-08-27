@@ -23,6 +23,7 @@ public class LighterLamp : InteractableObject, IObserver
     private bool _canInteractWithWindow = false;
     private WindowManager windowManager;
     // для мини игры
+    [SerializeField] private AudioClip[] _audioClips;
 
     [SerializeField] private int _currentWindowIndex; // текущий индекс окна который мы должны Unfill
     private void OnEnable()
@@ -108,8 +109,12 @@ public class LighterLamp : InteractableObject, IObserver
                     if (_currentWindowIndex > 3)
                     {
                         _currentWindowIndex = 0;
+                        SoundSystem.Instance.PlaySound(_audioClips[1]);
                         windowManager.NextLevel();
+                        return;
                     }
+
+                    SoundSystem.Instance.PlaySound(_audioClips[0]);
                 }
                 else
                 {
