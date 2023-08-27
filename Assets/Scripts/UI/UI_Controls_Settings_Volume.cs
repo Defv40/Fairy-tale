@@ -1,8 +1,20 @@
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Controls_Settings_Volume : MonoBehaviour
 {
+    [SerializeField] private Slider globalVolume;
+    [SerializeField] private Slider musicVolume;
+    [SerializeField] private Slider soundsVolume;
+
+    private void OnEnable()
+    {
+        globalVolume.value = Global_Settings.InitOldValues.globalVolume;
+        musicVolume.value = Global_Settings.InitOldValues.musicVolume;
+        soundsVolume.value = Global_Settings.InitOldValues.soundsVolume;
+    }
+
     public void GlobalVolume_Slider_OnChanged(float value)
     {
         Global_Settings.Init.globalVolume = value;

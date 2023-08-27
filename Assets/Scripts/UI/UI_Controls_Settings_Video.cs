@@ -1,17 +1,17 @@
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class UI_Controls_Settings_Video : MonoBehaviour
 {
-    [SerializeField] private TMP_Dropdown tmp_resolution;
+    [SerializeField] private TMP_Dropdown resolution;
+    [SerializeField] private Toggle vsync;
     private Resolution[] resolutions;
 
-    private void Start()
+    private void OnEnable()
     {
         resolutions = (from r in Screen.resolutions where r.refreshRateRatio.Equals(Screen.currentResolution.refreshRateRatio) select r).ToArray();
 
@@ -19,11 +19,15 @@ public class UI_Controls_Settings_Video : MonoBehaviour
         while (++i < resolutions.Length)
         {
             var str = $"{resolutions[i].width}x{resolutions[i].height}";
-            tmp_resolution.options.Add(new TMP_Dropdown.OptionData(str));
+            resolution.options.Add(new TMP_Dropdown.OptionData(str));
 
-            if (resolutions[i].Equals(Screen.currentResolution)) 
-                tmp_resolution.value = i;
+            if (resolutions[i].Equals(Global_Settings.Init.resolution))
+                resolution.value = i;
         }
+
+        int vs = Global_Settings.InitOldValues.vsync;
+        if (vs == 0) vsync.isOn = false;
+        else vsync.isOn = true;
     }
 
     public void Resolution_DropDown_OnChanged(int value)
