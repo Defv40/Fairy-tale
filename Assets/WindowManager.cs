@@ -33,7 +33,7 @@ public class WindowManager : MonoBehaviour, IObserver
     private void Start()
     {
        
-        print("");
+        
     }
     private List<MiniGameWindow> Shuffle(List<MiniGameWindow> windows)
     {
@@ -121,7 +121,7 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
     {
         RenderProgress(false);
         currentProgress = 0;
-        SoundSystem.Instance.PlaySound(_audioClips[0]);
+        SoundSystem.Instance.PlaySound(_audioClips[0], .2f);
         RandomParametrsForWindow();
     }
 

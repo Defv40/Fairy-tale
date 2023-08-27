@@ -109,12 +109,12 @@ public class LighterLamp : InteractableObject, IObserver
                     if (_currentWindowIndex > 3)
                     {
                         _currentWindowIndex = 0;
-                        SoundSystem.Instance.PlaySound(_audioClips[1]);
+                        SoundSystem.Instance.PlaySound(_audioClips[1], .3f);
                         windowManager.NextLevel();
                         return;
                     }
 
-                    SoundSystem.Instance.PlaySound(_audioClips[0]);
+                    SoundSystem.Instance.PlaySound(_audioClips[0], 1f);
                 }
                 else
                 {

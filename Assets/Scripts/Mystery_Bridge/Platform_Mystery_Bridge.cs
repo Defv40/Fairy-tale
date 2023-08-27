@@ -64,7 +64,7 @@ public class Platform_Mystery_Bridge : MonoBehaviour
             else if (!isAvailable)
             {
                 m_rigidbody.isKinematic = false;
-                SoundSystem.Instance.PlaySound(_audioClips[0]);// звук ломания 
+                SoundSystem.Instance.PlaySound(_audioClips[0], .1f);// звук ломания 
             }
         }
     }
