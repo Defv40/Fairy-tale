@@ -14,7 +14,7 @@ public class Platform_Mystery_Bridge : MonoBehaviour
 
     private MeshRenderer m_meshRenderer;
     private Rigidbody m_rigidbody;
-
+    [SerializeField] private AudioClip[] _audioClips; // звуки для платформы
     private void Start()
     {
         m_meshRenderer = GetComponent<MeshRenderer>();
@@ -61,7 +61,11 @@ public class Platform_Mystery_Bridge : MonoBehaviour
                 SwitchTorches();
             }
             else if (isAvailable) SwitchTorches();
-            else if (!isAvailable) m_rigidbody.isKinematic = false;
+            else if (!isAvailable)
+            {
+                m_rigidbody.isKinematic = false;
+                SoundSystem.Instance.PlaySound(_audioClips[0]);// звук ломания 
+            }
         }
     }
 
