@@ -240,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6465440791312555841}
   m_LocalRotation: {x: -0.0000000067919976, y: 0.96025586, z: -0.27912137, w: -0.000000023366376}
-  m_LocalPosition: {x: -4.3700004, y: 4.660558, z: -8.398177}
+  m_LocalPosition: {x: -4.3700004, y: 3.8035576, z: -9.184898}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -395,7 +395,7 @@ MonoBehaviour:
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
   m_ShowToolkit: 1
-  m_ShowCustomSorter: 1
+  m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
