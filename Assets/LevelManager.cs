@@ -11,13 +11,9 @@ public class LevelManager : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        _playerInventory = GameObject.FindAnyObjectByType<Inventory>();
+        _playerInventory = FindAnyObjectByType<Inventory>();
     }
 
-    private void OnLevelWasLoaded(int level)
-    {
-        
-    }
     private void Start()
     {
         Blackout.Inst.Pass(false, 0.35f, _event: () =>

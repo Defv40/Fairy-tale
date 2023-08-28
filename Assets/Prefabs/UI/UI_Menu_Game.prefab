@@ -3287,12 +3287,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
       propertyPath: m_Value
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
       propertyPath: m_FillRect
       value: 
       objectReference: {fileID: 8852338855713621843}
+    - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
       propertyPath: m_HandleRect
       value: 
@@ -4073,12 +4081,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
       propertyPath: m_Value
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
       propertyPath: m_FillRect
       value: 
       objectReference: {fileID: 6041523173838397205}
+    - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 1602070617336632041, guid: 693f127d793918548aa97aa9b2f05ca3, type: 3}
       propertyPath: m_HandleRect
       value: 

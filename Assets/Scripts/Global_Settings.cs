@@ -20,8 +20,8 @@ public class Global_Settings : MonoBehaviour, ICloneable
     [Range(0, 4)] public int vsync;
 
     [Range(0, 1)] public float globalVolume;
-    [Range(0, 1)] public float musicVolume; // пока не используется
-    [Range(0, 1)] public float soundsVolume; // пока не используется
+    [Range(-80, 0)] public float musicVolume;
+    [Range(-80, 0)] public float soundsVolume;
 
     public Resolution resolution;
 
@@ -63,6 +63,7 @@ public class Global_Settings : MonoBehaviour, ICloneable
         globalPostProcessVolume.enabled = postProcessingEnabled;
 
         AudioListener.volume = globalVolume;
+        SoundSystem.Instance.SetGlobalSettingsVolume(musicVolume, soundsVolume);
     }
 
     public void Save()
