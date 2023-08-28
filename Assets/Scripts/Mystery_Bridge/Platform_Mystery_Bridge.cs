@@ -47,6 +47,7 @@ public class Platform_Mystery_Bridge : MonoBehaviour
     {
         m_rigidbody.isKinematic = true;
         transform.position = defaultValues.position;
+        transform.rotation = Quaternion.Euler(-90, 0, 0);
         isLocked = defaultValues.isLocked;
         ChangeAvailable(defaultValues.isAvailable);
     }
