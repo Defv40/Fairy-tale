@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class UI_Buttons_Game_Menu : MonoBehaviour
@@ -16,6 +17,6 @@ public class UI_Buttons_Game_Menu : MonoBehaviour
 
     public void Main_Menu_OnClick()
     {
-        // переключение на мэйн меню
+        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 }
