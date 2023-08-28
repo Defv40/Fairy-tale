@@ -6,6 +6,12 @@ public class UI_Buttons_Main_Menu : MonoBehaviour
 {
     [SerializeField] private GameObject o_settings;
 
+    public void Awake()
+    {
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+    }
+
     public void NewGame_OnClick()
     {
         Blackout.Inst.Pass(true, _event: () => SceneManager.LoadScene(1, LoadSceneMode.Single));

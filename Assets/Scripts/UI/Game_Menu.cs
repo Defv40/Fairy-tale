@@ -8,6 +8,7 @@ public class Game_Menu : MonoBehaviour
     public static Game_Menu Instance { get; private set; }
 
     public bool isActived { get; private set; }
+    public bool isBlocked;
     [SerializeField] private GameObject[] elementsMenu;
     private Image image;
 
@@ -20,12 +21,13 @@ public class Game_Menu : MonoBehaviour
     {
         image = GetComponent<Image>();
         isActived = false;
+        isBlocked = false;
         DisableAll();
     }
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && !isBlocked)
         {
             if (isActived) DisableAll();
             else Enable();
