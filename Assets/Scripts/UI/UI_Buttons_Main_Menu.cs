@@ -1,6 +1,6 @@
 
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class UI_Buttons_Main_Menu : MonoBehaviour
 {
@@ -8,7 +8,8 @@ public class UI_Buttons_Main_Menu : MonoBehaviour
 
     public void NewGame_OnClick()
     {
-        // переключение на 1 уровень
+        Blackout.Inst.Pass(true, _event: () => SceneManager.LoadScene(1, LoadSceneMode.Single));
+        
     }
     public void Settings_OnClick()
     {

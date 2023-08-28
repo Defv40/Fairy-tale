@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour, IInteractable
 {
-
-
     private Inventory _playerInventory;
+    private bool isLoaded;
 
     private void Awake()
     {
@@ -16,11 +15,21 @@ public class LevelManager : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        Blackout.Inst.Pass(false, 0.35f, _event: () =>
-        {
-            Player.Instance.SetMove = true;
-        });
+        isLoaded = false;
     }
+
+    private void LateUpdate()
+    {
+        if(!isLoaded)
+        {
+            isLoaded = true;
+            Blackout.Inst.Pass(false, 0.35f, _event: () =>
+            {
+                Player.Instance.SetMove = true;
+            });
+        }
+    }
+
     public void GoToTheNextLevel()
     {
         int indexNextLevel = SceneManager.GetActiveScene().buildIndex + 1;

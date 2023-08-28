@@ -40,7 +40,7 @@ public class Blackout : MonoBehaviour
         {
             Debug.Log(image.color.a);
             yield return new WaitForEndOfFrame();
-            var a = image.color.a + speed * Time.unscaledDeltaTime;
+            var a = image.color.a + speed * Time.deltaTime;
             image.color = new Color(image.color.r, image.color.g, image.color.b, a);
         }
         if(_event != null) _Event(_event);
@@ -51,9 +51,9 @@ public class Blackout : MonoBehaviour
         image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
         while (image.color.a > 0)
         {
-            yield return new WaitForEndOfFrame();
-            var a = image.color.a - speed * Time.unscaledDeltaTime;
+            var a = image.color.a - speed * Time.deltaTime;
             image.color = new Color(image.color.r, image.color.g, image.color.b, a);
+            yield return new WaitForEndOfFrame();
         }
         if (_event != null) _Event(_event);
     }
