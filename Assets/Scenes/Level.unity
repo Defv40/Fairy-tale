@@ -813,6 +813,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 475876526}
     m_Modifications:
+    - target: {fileID: 1130674772916867848, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: interfaceInteract.Array.data[1]
+      value: 
+      objectReference: {fileID: 990636732}
     - target: {fileID: 4360799661000502400, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2066,6 +2070,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 9202184478565781670, guid: 6edda56722491b64d83e3a14a295935c, type: 3}
+--- !u!1 &990636732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1490196303657703992, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+  m_PrefabInstance: {fileID: 393945172372602090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &993107702
 GameObject:
   m_ObjectHideFlags: 0

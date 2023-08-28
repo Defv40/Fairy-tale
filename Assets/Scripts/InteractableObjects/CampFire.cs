@@ -8,6 +8,7 @@ public class CampFire : InteractableObject
     private Inventory _playerInventory;
     [SerializeField] private List<FireFly> fireFlies = new List<FireFly>();
     [SerializeField] private Key _key;
+    [SerializeField] private GameObject _fireFlies; // удалим всех если пройдем уровень
     private void Awake()
     {
         _playerInventory = GameObject.FindAnyObjectByType<Inventory>();  
@@ -25,7 +26,9 @@ public class CampFire : InteractableObject
             NotificationCenter.Intastance.NotifyObserver(EventType.OnRemoveItemFromInventory);
             _key?.Interact();
             _key = null;
-            
+            Destroy(_fireFlies);
+
+
         }
         else
         {

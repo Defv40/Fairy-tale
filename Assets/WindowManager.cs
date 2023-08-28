@@ -16,10 +16,13 @@ public class WindowManager : MonoBehaviour, IObserver
     [SerializeField] private int currentProgress = 0;
 
     [SerializeField] private AudioClip[] _audioClips;
+
+    [SerializeField] public Key Key; // выдадут за победу
+    [SerializeField] private Inventory playerInventory;
     private void Awake()
     {
         _windows = GameObject.FindObjectsByType<MiniGameWindow>(FindObjectsSortMode.None).ToList();
-      
+        playerInventory = GameObject.FindFirstObjectByType<Inventory>();
     }
     private void OnEnable()
     {
@@ -109,7 +112,10 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
         if (currentProgress > 3)
         {
             Debug.Log("Победа!!");
+            playerInventory.AddItem(Key);
+            Key = null;
             UnfillWindow();
+
         }
         else
         {

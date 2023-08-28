@@ -5295,6 +5295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 401908948}
     m_Modifications:
+    - target: {fileID: 1130674772916867848, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: interfaceInteract.Array.data[1]
+      value: 
+      objectReference: {fileID: 1774966819}
     - target: {fileID: 4360799661000502400, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5537,6 +5541,11 @@ PrefabInstance:
 --- !u!224 &1774966818 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6803257582018090585, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+  m_PrefabInstance: {fileID: 1774966817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1774966819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1490196303657703992, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
   m_PrefabInstance: {fileID: 1774966817}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1774997673 stripped

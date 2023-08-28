@@ -43,12 +43,14 @@ public class LighterLamp : InteractableObject, IObserver
     }
     public override void Interact()
     {
+        if (windowManager.Key == null) return;
+
         Player.Instance.SetMove = false;
 
         canControll = true;
 
-        virtualCamera.LookAt = lighterBody;
-        virtualCamera.Follow = lighterBody;
+        virtualCamera.LookAt = transform;
+        virtualCamera.Follow = transform;
 
      
 
@@ -149,7 +151,7 @@ public class LighterLamp : InteractableObject, IObserver
             // ѕримен€ем плавный поворот с использованием Lerp
         }
 
-        verticalRotation += verticalInput * verticalTurnSpeed;
+        verticalRotation -= verticalInput * verticalTurnSpeed;
         verticalRotation = Mathf.Clamp(verticalRotation, -verticalRotationLimit, verticalRotationLimit);
         // ѕримен€ем вертикальный поворот с лимитом
 
