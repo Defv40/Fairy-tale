@@ -23,8 +23,9 @@ public class CampFire : InteractableObject
             _playerInventory.PlayerInventory.RemoveAll((item) => item is FireFly);
             fireFlies.ForEach((item) => Destroy(item.gameObject));
             NotificationCenter.Intastance.NotifyObserver(EventType.OnRemoveItemFromInventory);
+            _key?.Interact();
             _key = null;
-           
+            
         }
         else
         {
