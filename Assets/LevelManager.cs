@@ -7,6 +7,13 @@ public class LevelManager : MonoBehaviour, IInteractable
 {
 
 
+    private Inventory _playerInventory;
+
+    private void Awake()
+    {
+        _playerInventory = GameObject.FindAnyObjectByType<Inventory>();
+    }
+
     private void OnLevelWasLoaded(int level)
     {
         
@@ -26,6 +33,13 @@ public class LevelManager : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        NotificationCenter.Intastance.NotifyObserver(EventType.OnCompleteLevel);
+        var item = _playerInventory.PlayerInventory.Find((Item item) => item is Key);
+        if (item != null)
+        {
+            _playerInventory.PlayerInventory.Remove(item);
+            NotificationCenter.Intastance.NotifyObserver(EventType.OnRemoveItemFromInventory);
+            NotificationCenter.Intastance.NotifyObserver(EventType.OnCompleteLevel);
+        }
+      
     }
 }

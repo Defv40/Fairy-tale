@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundSystem : MonoBehaviour
@@ -7,8 +8,8 @@ public class SoundSystem : MonoBehaviour
     
 
     private AudioSource _audioSource => GetComponent<AudioSource>();
+    public AudioMixer Mixer;
 
-  
     public static SoundSystem Instance { get; private set; }
 
     private void Awake()
@@ -20,5 +21,17 @@ public class SoundSystem : MonoBehaviour
     {
         _audioSource.pitch = Random.Range(p1, p2);
         _audioSource.PlayOneShot(clip, volume);
+    }
+
+    /// <summary>
+    /// Меняет громкость звуков в игре
+    /// </summary>
+    /// <param name="backGroundMusic">где 1 - это 100% громкость</param>
+    /// <param name="soundMusic">где 1 - это 100% громкость</param>
+    public void SetGlobalSettingsVolume()
+    {
+        float backGroundMusic = -10f; float soundMusic = -10f;
+        Mixer.SetFloat("BackGroundMusicVolume", backGroundMusic);
+        Mixer.SetFloat("SoundsVolume", soundMusic);
     }
 }
