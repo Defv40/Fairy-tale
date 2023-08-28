@@ -5,8 +5,6 @@ using UnityEngine.Audio;
 [RequireComponent(typeof(AudioSource))]
 public class SoundSystem : MonoBehaviour
 {
-    
-
     private AudioSource _audioSource => GetComponent<AudioSource>();
     public AudioMixer Mixer;
 

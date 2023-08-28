@@ -34,7 +34,7 @@ public class Global_Settings : MonoBehaviour, ICloneable
         GUILayout.Label((1 / Time.unscaledDeltaTime).ToString());
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         Init = this;
 
