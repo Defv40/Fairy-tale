@@ -439,7 +439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 113.6, y: 49.8}
+  m_AnchoredPosition: {x: 113.599976, y: 112}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8981993476825839884
@@ -2400,11 +2400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3034575541387296808, guid: 67a784fd6333c1749b94cbf6c0d89967, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 262.6
       objectReference: {fileID: 0}
     - target: {fileID: 3034575541387296808, guid: 67a784fd6333c1749b94cbf6c0d89967, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 43.4
       objectReference: {fileID: 0}
     - target: {fileID: 3034575541387296808, guid: 67a784fd6333c1749b94cbf6c0d89967, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2539,11 +2539,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allIconsForInventory:
-  - {fileID: 21300000, guid: ff0de95b4641c274699f50c0c044741a, type: 3}
+  - {fileID: 21300000, guid: 17371fb336cebc448abfd4534ae4b5dc, type: 3}
   - {fileID: 21300000, guid: ca3dd595777bdee4e9df21f1e8b08acd, type: 3}
   - {fileID: 21300000, guid: a9f0cb4d319b913409070125ce3187f3, type: 3}
   - {fileID: 21300000, guid: 0e1113218b6f82b43971446ef8f7ead3, type: 3}
-  - {fileID: 21300000, guid: 501d446bff0658c4fb7ec001a8d75917, type: 3}
+  - {fileID: 21300000, guid: 43c4bfa9d6649424db63bec2b397ee80, type: 3}
   _itemPrefab: {fileID: 4972419099745849907, guid: deca4f1d3008d3944a46fca4a23c2daf, type: 3}
 --- !u!224 &5293396985884848432 stripped
 RectTransform:
