@@ -61,7 +61,7 @@ public class Platform_Mystery_Bridge : MonoBehaviour
                 SwitchTorches();
             }
             else if (isAvailable) SwitchTorches();
-            else if (!isAvailable)
+            else if (!isAvailable && m_rigidbody.isKinematic)
             {
                 m_rigidbody.isKinematic = false;
                 SoundSystem.Instance.PlaySound(_audioClips[0], .1f);// звук ломания 
