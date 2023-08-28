@@ -31,4 +31,10 @@ public  class MiniGameWindow : MonoBehaviour
     {
         return index == _indexWindow && _windowMaterials[0].Equals(material);
     }
+
+    public void SetMaterial(List<Material> materials)
+    {
+        _windowMaterials = materials;
+        _windowMesh.SetMaterials(_windowMaterials);
+    }
 }

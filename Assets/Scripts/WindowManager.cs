@@ -115,7 +115,7 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
             playerInventory.AddItem(Key);
             Key = null;
             UnfillWindow();
-
+            NotificationCenter.Intastance.NotifyObserver(EventType.OnWinMiniGame);
         }
         else
         {
