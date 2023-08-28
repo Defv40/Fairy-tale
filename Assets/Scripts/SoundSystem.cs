@@ -26,11 +26,10 @@ public class SoundSystem : MonoBehaviour
     /// <summary>
     /// Меняет громкость звуков в игре
     /// </summary>
-    /// <param name="backGroundMusic">где 1 - это 100% громкость</param>
-    /// <param name="soundMusic">где 1 - это 100% громкость</param>
-    public void SetGlobalSettingsVolume()
+    /// <param name="backGroundMusic">где 0 - это 100% громкость, -80 - 0%</param>
+    /// <param name="soundMusic">где 0 - это 100% громкость, -80 - 0%</param>
+    public void SetGlobalSettingsVolume(float backGroundMusic = 0f, float soundMusic = 0f)
     {
-        float backGroundMusic = -10f; float soundMusic = -10f;
         Mixer.SetFloat("BackGroundMusicVolume", backGroundMusic);
         Mixer.SetFloat("SoundsVolume", soundMusic);
     }
