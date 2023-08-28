@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <settings>
   <textureResolution>0</textureResolution>
-  <shadowResolution>4</shadowResolution>
+  <shadowResolution>Low</shadowResolution>
   <antiAliasing>1</antiAliasing>
   <vsync>1</vsync>
   <postProcessing>True</postProcessing>

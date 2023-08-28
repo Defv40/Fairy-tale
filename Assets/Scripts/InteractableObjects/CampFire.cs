@@ -7,6 +7,7 @@ public class CampFire : InteractableObject
 {
     private Inventory _playerInventory;
     [SerializeField] private List<FireFly> fireFlies = new List<FireFly>();
+    [SerializeField] private Key _key;
     private void Awake()
     {
         _playerInventory = GameObject.FindAnyObjectByType<Inventory>();  
@@ -19,18 +20,11 @@ public class CampFire : InteractableObject
         if (item >= 5)
         {
             Debug.Log("Хватает проходи на новый уровень!");
-            //foreach (Item fireFly in _playerInventory.PlayerInventory)
-            //{
-            //    if (fireFly is FireFly)
-            //    {
-            //        _playerInventory.PlayerInventory.Remove(fireFly);
-            //    }
-            //}
-
             _playerInventory.PlayerInventory.RemoveAll((item) => item is FireFly);
             fireFlies.ForEach((item) => Destroy(item.gameObject));
-
             NotificationCenter.Intastance.NotifyObserver(EventType.OnRemoveItemFromInventory);
+            _key = null;
+           
         }
         else
         {
