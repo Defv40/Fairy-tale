@@ -21,6 +21,7 @@ public class CampFire : InteractableObject
         if (item >= 5)
         {
             Debug.Log("Хватает проходи на новый уровень!");
+            SoundSystem.Instance.PlaySound(_sounds[0], .5f);
             _playerInventory.PlayerInventory.RemoveAll((item) => item is FireFly);
             fireFlies.ForEach((item) => Destroy(item.gameObject));
             NotificationCenter.Intastance.NotifyObserver(EventType.OnRemoveItemFromInventory);

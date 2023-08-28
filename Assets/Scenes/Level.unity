@@ -3151,6 +3151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4632621971795040067, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: _objectTohide.Array.data[1]
+      value: 
+      objectReference: {fileID: 347909048}
     - target: {fileID: 5033715535312431712, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
       propertyPath: levelManager
       value: 

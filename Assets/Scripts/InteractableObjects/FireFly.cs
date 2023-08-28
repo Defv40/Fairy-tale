@@ -17,7 +17,7 @@ public class FireFly : Item
     private SphereCollider _collider;
 
     [SerializeField] private ParticleSystem _particle;
-
+    
     private Inventory _playerInventory;
 
  
@@ -42,6 +42,9 @@ public class FireFly : Item
         _particle.Stop();
         _particle.Clear();
         _collider.enabled = false;
+        
+        NotificationCenter.Intastance.NotifyObserver(EventType.OnInteractObjectExit);
+
         StartCoroutine(LifeTimeInInventory());
     }
 
@@ -76,6 +79,7 @@ public class FireFly : Item
 
         _currentTimeFly = 0;
         _collider.enabled = true;
+        
     }
 
     IEnumerator LifeTimeInInventory()
