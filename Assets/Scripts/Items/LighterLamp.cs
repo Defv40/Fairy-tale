@@ -24,7 +24,7 @@ public class LighterLamp : InteractableObject, IObserver
     private WindowManager windowManager;
     // для мини игры
     [SerializeField] private AudioClip[] _audioClips;
-
+    [SerializeField] private GameObject _coreLamp; 
     [SerializeField] private int _currentWindowIndex; // текущий индекс окна который мы должны Unfill
     private void OnEnable()
     {
@@ -86,7 +86,7 @@ public class LighterLamp : InteractableObject, IObserver
             ui_projector.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.H) && _canInteractWithWindow)
+        if (Input.GetKeyDown(KeyCode.F) && _canInteractWithWindow)
         {
             TryInteractWithWindow();
         }
@@ -185,6 +185,7 @@ public class LighterLamp : InteractableObject, IObserver
         }
 
         lampLight.color = lampColor;
+        _coreLamp.GetComponent<MeshRenderer>().material = _currentLampMaterial;
     }
 
     public void OnNotify(EventType type)
