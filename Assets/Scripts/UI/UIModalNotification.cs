@@ -1,22 +1,23 @@
 
+using System.Linq;
 using UnityEngine;
 
 public class UIModalNotification : UIModal
 {
-    [SerializeField] private GameObject exclamationMark;
+    [SerializeField] private GameObject[] interfaceInteract;
 
     public override void OnNotify(EventType type)
     {
         switch (type)
         {
             case EventType.OnInteractObjectEnter:
-                exclamationMark.SetActive(true);
+                interfaceInteract.ToList().ForEach(i => i.SetActive(true));
                 break;
             case EventType.OnInteractObjectExit:
-                exclamationMark.SetActive(false);
+                interfaceInteract.ToList().ForEach(i => i.SetActive(false));
                 break;
             case EventType.OnInteractObjectStay:
-                exclamationMark.SetActive(true);
+                interfaceInteract.ToList().ForEach(i => i.SetActive(true));
                 break;
 
         }
