@@ -49,6 +49,7 @@ public class Blackout : MonoBehaviour
 
     private IEnumerator ToTransperent(EventAfterPass _event, float speed)
     {
+        image.enabled = true;
         image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
         while (image.color.a > 0)
         {
