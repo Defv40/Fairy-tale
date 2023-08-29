@@ -6,7 +6,7 @@
   <vsync>1</vsync>
   <postProcessing>True</postProcessing>
   <globalVolume>1</globalVolume>
-  <nusicVolume>-5,488949</nusicVolume>
+  <nusicVolume>0</nusicVolume>
   <soundsVolume>0</soundsVolume>
   <resolution>2560x1440</resolution>
 </settings>
