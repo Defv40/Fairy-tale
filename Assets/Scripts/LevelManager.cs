@@ -7,10 +7,12 @@ public class LevelManager : MonoBehaviour, IInteractable
 {
     private Inventory _playerInventory;
     private bool isLoaded;
-
+    private NotifyUserText _tipText;
+    [SerializeField] private string _textForTip = "Чтобы выбраться отсюда мне нужен ключ";
     private void Awake()
     {
         _playerInventory = FindAnyObjectByType<Inventory>();
+        _tipText = FindAnyObjectByType<NotifyUserText>();
     }
 
     private void Start()
@@ -25,7 +27,9 @@ public class LevelManager : MonoBehaviour, IInteractable
             isLoaded = true;
             Blackout.Inst.Pass(false, 0.35f, _event: () =>
             {
+                
                 Player.Instance.SetMove = true;
+               
             });
         }
     }
@@ -45,6 +49,11 @@ public class LevelManager : MonoBehaviour, IInteractable
             NotificationCenter.Intastance.NotifyObserver(EventType.OnRemoveItemFromInventory);
             NotificationCenter.Intastance.NotifyObserver(EventType.OnCompleteLevel);
         }
+        else
+        {
+            _tipText.Tip(_textForTip);
+        }
+
       
     }
 }

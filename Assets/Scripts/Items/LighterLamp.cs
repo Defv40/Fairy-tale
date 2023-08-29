@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +44,7 @@ public class LighterLamp : InteractableObject, IObserver
     }
     public override void Interact()
     {
-        if (windowManager.Key == null) return;
+        if (windowManager.Key == null) return; // получили ключ с игры, и больше не сможем поиграть!
 
         Player.Instance.SetMove = false;
 
@@ -73,17 +74,7 @@ public class LighterLamp : InteractableObject, IObserver
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            virtualCamera.LookAt = Player.Instance.transform;
-            virtualCamera.Follow = Player.Instance.transform;
-
-            canControll = false;
-
-
-
-            Player.Instance.SetMove = true;
-
-            transporter.m_CameraDistance = baseFollowOffset;
-            ui_projector.SetActive(false);
+            LeaveProjector();
         }
 
         if (Input.GetKeyDown(KeyCode.F) && _canInteractWithWindow)
@@ -93,6 +84,22 @@ public class LighterLamp : InteractableObject, IObserver
 
         DebugLine();
     }
+
+    public void LeaveProjector()
+    {
+        virtualCamera.LookAt = Player.Instance.transform;
+        virtualCamera.Follow = Player.Instance.transform;
+
+        canControll = false;
+
+
+
+        Player.Instance.SetMove = true;
+
+        transporter.m_CameraDistance = baseFollowOffset;
+        ui_projector.SetActive(false);
+    }
+
     private void TryInteractWithWindow()
     {
         Ray ray = new Ray(lampLight.transform.position, lampLight.transform.forward);
@@ -107,11 +114,12 @@ public class LighterLamp : InteractableObject, IObserver
                 if (rightWindow)
                 {
                     Debug.Log("правильное окно");
+                    window.SetMaterial(new List<Material>() { _currentLampMaterial });
                     _currentWindowIndex++;
                     if (_currentWindowIndex > 3)
                     {
                         _currentWindowIndex = 0;
-                        SoundSystem.Instance.PlaySound(_audioClips[1], .3f);
+                        SoundSystem.Instance.PlaySound(_audioClips[1], .1f);
                         windowManager.NextLevel();
                         return;
                     }
@@ -198,6 +206,11 @@ public class LighterLamp : InteractableObject, IObserver
         if (EventType.OnStartFillWindows == type)
         {
             _canInteractWithWindow = false;
+        }
+
+        if (EventType.OnWinMiniGame == type)
+        {
+            LeaveProjector();
         }
     }
 }

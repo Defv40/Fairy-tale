@@ -115,7 +115,7 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
             playerInventory.AddItem(Key);
             Key = null;
             UnfillWindow();
-
+            NotificationCenter.Intastance.NotifyObserver(EventType.OnWinMiniGame);
         }
         else
         {
@@ -127,7 +127,7 @@ private Material RandomMaterial(int startIndex, int endIndex, List<Material> all
     {
         RenderProgress(false);
         currentProgress = 0;
-        SoundSystem.Instance.PlaySound(_audioClips[0], .2f);
+        SoundSystem.Instance.PlaySound(_audioClips[0], .1f);
         RandomParametrsForWindow();
     }
 

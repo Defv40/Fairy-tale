@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class DontDestroy : MonoBehaviour
 {
     [SerializeField] private AudioClip[] _musics;
-    [SerializeField] private bool _initMainMenuSound = false;
-    [SerializeField] private bool _initSecondBackgroundMusic = false;
+    //[SerializeField] private bool _initMainMenuSound = false;
+    //[SerializeField] private bool _initSecondBackgroundMusic = false;
     [SerializeField] private AudioSource _audioSource;
     private void OnEnable()
     {

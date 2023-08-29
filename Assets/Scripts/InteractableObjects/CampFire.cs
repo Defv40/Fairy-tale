@@ -9,9 +9,12 @@ public class CampFire : InteractableObject
     [SerializeField] private List<FireFly> fireFlies = new List<FireFly>();
     [SerializeField] private Key _key;
     [SerializeField] private GameObject _fireFlies; // удалим всех если пройдем уровень
+    private NotifyUserText _tipText;
+    [SerializeField] private string _textForTip = "Мне нужно больше светлячков";
     private void Awake()
     {
-        _playerInventory = GameObject.FindAnyObjectByType<Inventory>();  
+        _playerInventory = GameObject.FindAnyObjectByType<Inventory>();
+        _tipText = GameObject.FindAnyObjectByType<NotifyUserText>();
     }
     public override void Interact()
     {
@@ -33,7 +36,9 @@ public class CampFire : InteractableObject
         }
         else
         {
-            Debug.Log("Не хватает нужно больше светлячков, " + $"У вас сейчас {item}"); ;
+            Debug.Log("Не хватает нужно больше светлячков, " + $"У вас сейчас {item}");
+            NotificationCenter.Intastance.NotifyObserver(EventType.OnShowTip);
+            _tipText.Tip(_textForTip);
         }
    
 

@@ -3934,6 +3934,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3114590916337781330, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_text
+      value: "\u0417\u0434\u0435\u0441\u044C \u0441\u0442\u043E\u043B\u044C\u043A\u043E
+        \u0441\u0432\u0435\u0442\u043B\u044F\u0447\u043A\u043E\u0432.. \u0438 \u043A\u043E\u0441\u0442\u0435\u0440.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114590916337781330, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_fontSize
+      value: 18.35
+      objectReference: {fileID: 0}
     - target: {fileID: 3505158095491860308, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4141,6 +4150,11 @@ PrefabInstance:
     - target: {fileID: 7280911731803778524, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525068923246020505, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: textForTip
+      value: "\u0417\u0434\u0435\u0441\u044C \u0441\u0442\u043E\u043B\u044C\u043A\u043E
+        \u0441\u0432\u0435\u0442\u043B\u044F\u0447\u043A\u043E\u0432.. \u0438 \u043A\u043E\u0441\u0442\u0435\u0440.."
       objectReference: {fileID: 0}
     - target: {fileID: 8902274039473896216, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
       propertyPath: m_AnchorMax.y

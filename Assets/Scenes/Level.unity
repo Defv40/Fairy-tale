@@ -348,9 +348,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1758033268}
     m_Modifications:
+    - target: {fileID: 1829786087670120886, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073742071421354912, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694006322756960775, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5820630821362771145, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
       propertyPath: m_Name
       value: UI_HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884724483140057001, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055476799750976959, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6803257582018090585, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
       propertyPath: m_Pivot.x
@@ -434,6 +454,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6803257582018090585, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626284559327200808, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213712563005541436, guid: dbaca8f3866431e41ac7fc2226d9e988, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3207,6 +3235,14 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -2874154938717622568, guid: 5cc97a3bdf17c0247ba56a74fc6e545f, type: 2}
+    - target: {fileID: 8246024081859519645, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246024081859519645, guid: 901a529fd16f0b94fa241cc4b9735f4e, type: 3}
+      propertyPath: audioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: fc1b79ebf8f0baa468cfbd193d8a3e84, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
