@@ -10,7 +10,10 @@ public class CheskMusic : MonoBehaviour
         DontDestroy[] obj = GameObject.FindObjectsByType<DontDestroy>(FindObjectsSortMode.None);
         if (obj.Length > 1)
         {
-            Destroy(obj[1].gameObject);
+            Destroy(obj[0].gameObject);
+            obj[1].SetMusic();
+           
+          
         }
      
     }

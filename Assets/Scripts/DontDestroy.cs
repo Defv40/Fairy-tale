@@ -39,4 +39,11 @@ public class DontDestroy : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
     }
+
+    public void SetMusic() // для фикса дублирования музыки в меню
+    {
+        _audioSource.clip = _musics[0];
+        _audioSource.volume = .7f;
+        _audioSource.Play();
+    }
 }
