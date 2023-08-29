@@ -24,6 +24,7 @@ public class Player : Actor, IMovable, IObserver
     [SerializeField] private Transform _interactRayObject; // объект из которого будет пускаться луч для взаимодействия
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private List<AudioClip> audioClips = new List<AudioClip>();
+    
     public bool IsInteracting { get; private set; }
     private bool _canJump;
     private Ray _interactRay;
@@ -58,7 +59,6 @@ public class Player : Actor, IMovable, IObserver
 
         NotificationCenter.Intastance.RemoveObserver(this);
     }
-
 
     public void OnNotify(EventType type)
     {

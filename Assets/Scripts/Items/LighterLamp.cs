@@ -44,7 +44,7 @@ public class LighterLamp : InteractableObject, IObserver
     }
     public override void Interact()
     {
-        if (windowManager.Key == null) return;
+        if (windowManager.Key == null) return; // получили ключ с игры, и больше не сможем поиграть!
 
         Player.Instance.SetMove = false;
 
@@ -119,7 +119,7 @@ public class LighterLamp : InteractableObject, IObserver
                     if (_currentWindowIndex > 3)
                     {
                         _currentWindowIndex = 0;
-                        SoundSystem.Instance.PlaySound(_audioClips[1], .3f);
+                        SoundSystem.Instance.PlaySound(_audioClips[1], .1f);
                         windowManager.NextLevel();
                         return;
                     }
