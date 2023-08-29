@@ -29,11 +29,6 @@ public class Global_Settings : MonoBehaviour, ICloneable
 
     private string pathSettings = Directory.GetCurrentDirectory() + "//" + "Settings.xml";
 
-    private void OnGUI()
-    {
-        GUILayout.Label((1 / Time.unscaledDeltaTime).ToString());
-    }
-
     private void OnEnable()
     {
         Init = this;

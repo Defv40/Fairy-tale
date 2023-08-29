@@ -35,6 +35,7 @@ public class Blackout : MonoBehaviour
 
     private IEnumerator ToBlack(EventAfterPass _event, float speed)
     {
+        image.enabled = true;
         image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
         while (image.color.a < 1)
         {
@@ -43,7 +44,7 @@ public class Blackout : MonoBehaviour
             var a = image.color.a + speed * Time.deltaTime;
             image.color = new Color(image.color.r, image.color.g, image.color.b, a);
         }
-        if(_event != null) _Event(_event);
+        if (_event != null) _Event(_event);
     }
 
     private IEnumerator ToTransperent(EventAfterPass _event, float speed)
@@ -55,6 +56,7 @@ public class Blackout : MonoBehaviour
             image.color = new Color(image.color.r, image.color.g, image.color.b, a);
             yield return new WaitForEndOfFrame();
         }
+        image.enabled = false;
         if (_event != null) _Event(_event);
     }
 }
